@@ -1,0 +1,60 @@
+{
+  "seo": {
+    "titel": "Over Eva – Afscheid met Eva",
+    "omschrijving": "Ik ben Eva: een echte Besse en sinds 2020 Register Uitvaartverzorger. Met mijn eigen aanpak laat ik zien dat professionele en respectvolle uitvaartzorg ook anders kan."
+  },
+  "blokken": [
+    {
+      "_template": "fotoTekst",
+      "achtergrond": "ivoor",
+      "fotoRechts": true,
+      "foto": "/img/eva-gezin.jpg",
+      "fotoAlt": "Eva met haar man en twee kinderen in een zomers veld",
+      "eyebrow": "Over mij",
+      "titel": "Ik ben Eva",
+      "tekst": "Een echte Besse. Geboren, getogen en al mijn hele leven woonachtig in Best. Alleen voor een wereldreis van een jaar heb ik mijn vertrouwde omgeving even achter me gelaten. Na thuiskomst trouwde ik met een echte Besse en bouwden we samen ons leven, inmiddels met twee kinderen, verder op in de Speelheide.",
+      "variant": "paginakop"
+    },
+    {
+      "_template": "fotoTekst",
+      "achtergrond": "wit",
+      "fotoRechts": false,
+      "foto": "/img/eva-lach.jpg",
+      "fotoAlt": "Eva lacht in een lichte ruimte",
+      "fotoPositie": "50% 25%",
+      "eyebrow": "Uitvaartverzorger sinds 2020",
+      "titel": "Het mooiste vak ter wereld",
+      "tekst": "In 2020 durfde ik eindelijk de keuze te maken voor het mooiste vak ter wereld: uitvaartverzorger. Ik was destijds nog relatief jong voor het vak, maar merkte al snel dat ik juist daardoor heel open werd ontvangen door nabestaanden. Respect zit niet in leeftijd of in een zwart, grijs of donkerblauw pak, maar in hoe je met mensen omgaat. Met mijn eigen aanpak laat ik zien dat professionele en respectvolle uitvaartzorg ook anders kan.",
+      "variant": "gap16"
+    },
+    {
+      "_template": "fotoTekst",
+      "achtergrond": "ivoor",
+      "fotoRechts": true,
+      "foto": "/img/eva-deur.jpg",
+      "fotoAlt": "Eva bij een deur in een lichte ruimte",
+      "fotoPositie": "50% 25%",
+      "eyebrow": "Register Uitvaartverzorger",
+      "titel": "Blijven leren, blijven luisteren",
+      "tekst": "Ik volgde mijn opleiding in de turbulente coronatijd en behaalde datzelfde jaar mijn certificaat als Register Uitvaartverzorger. Door daarna regelmatig trainingen en cursussen te volgen, blijf ik mezelf ontwikkelen en op de hoogte van de nieuwste ontwikkelingen binnen de uitvaartzorg.\n\nWat mijn werk voor mij zo bijzonder maakt, is het vertrouwen dat families mij geven. Iedere keer opnieuw vind ik het waardevol wanneer een voordeur opengaat en mensen mij toelaten in één van de meest kwetsbare periodes van hun leven.",
+      "variant": "gap16"
+    },
+    {
+      "_template": "citaat",
+      "citaat": "Nabestaanden ervaren mij als deskundig, betrokken en oprecht. Iemand die rust brengt, goed luistert en vooruitdenkt.",
+      "toelichting": "Ik combineer menselijkheid met professionaliteit, ben creatief en heb een scherp oog voor detail. Want een goede uitvaartverzorger biedt niet alleen medeleven en steun, maar houdt de regie en zorgt dat alles tot in de puntjes geregeld is. Dat geeft rust."
+    },
+    {
+      "_template": "ervaringen",
+      "infokaart": {
+        "eyebrow": "Samen sterk",
+        "titel": "Mijn zorgteam",
+        "tekst": "[Korte tekst over het zorgteam en de samenwerking met collega-uitvaartverzorger (naam volgt), zodat families dag en nacht en ook tijdens vakanties geholpen worden.]"
+      },
+      "ervaringen": [
+        { "label": "Ervaring", "citaat": "[Echte ervaring van een nabestaande – volgt]", "naam": "[Naam], [plaats]" },
+        { "label": "Ervaring", "citaat": "[Echte ervaring van een nabestaande – volgt]", "naam": "[Naam], [plaats]" }
+      ]
+    }
+  ]
+}

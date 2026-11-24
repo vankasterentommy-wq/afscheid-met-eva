@@ -1,0 +1,30 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import TekstKaart from '../ui/TekstKaart.astro';
+import { bgClass, safeUrl } from '../../lib/util';
+import type { PaginaBlokkenChecklist } from '../../../tina/__generated__/types';
+
+interface Props {
+  data: PaginaBlokkenChecklist;
+}
+const { data: d } = Astro.props;
+const b = d.band;
+---
+<section class={bgClass(d.achtergrond)} data-tina-field={tinaField(d)}>
+  <div class="wrap sec stack" style="gap:24px">
+    {(d.eyebrow || d.titel || d.intro) && (
+      <div class="stack" style="gap:8px;max-width:760px">
+        {d.eyebrow && <span class="eb" data-tina-field={tinaField(d, 'eyebrow')}>{d.eyebrow}</span>}
+        {d.titel && <h2 data-tina-field={tinaField(d, 'titel')}>{d.titel}</h2>}
+        {d.intro && <p style="color:var(--text)" data-tina-field={tinaField(d, 'intro')}>{d.intro}</p>}
+      </div>
+    )}
+    {d.kaarten?.length ? <div class="kgrid">{d.kaarten.map((k) => k && <TekstKaart data={k} />)}</div> : null}
+    {b?.tekst && (
+      <div class="band" data-tina-field={tinaField(b)}>
+        <div class="stack" style="gap:4px"><span style="color:var(--text)" data-tina-field={tinaField(b, 'tekst')}>{b.tekst}</span></div>
+        {b.knopTekst && <a href={safeUrl(b.knopLink) || '/contact'} class="btn btn-p" data-tina-field={tinaField(b, 'knopTekst')}>{b.knopTekst}</a>}
+      </div>
+    )}
+  </div>
+</section>

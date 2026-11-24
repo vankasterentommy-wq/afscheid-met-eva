@@ -1,0 +1,18 @@
+---
+/** Overige pagina's die Eva zelf in Tina aanmaakt (en de bedankpagina). */
+import type { GetStaticPaths } from 'astro';
+import { readdirSync } from 'node:fs';
+import Page from '../components/Page.astro';
+
+export const getStaticPaths = (() => {
+  const vast = ['home', '404', 'overlijden-melden', 'uitvaart-regelen', 'kosten', 'voor-overlijden', 'over-eva', 'contact', 'privacy', 'voorwaarden'];
+  return readdirSync('content/pages')
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => f.replace(/\.json$/, ''))
+    .filter((slug) => !vast.includes(slug))
+    .map((slug) => ({ params: { slug } }));
+}) satisfies GetStaticPaths;
+
+const { slug } = Astro.params;
+---
+<Page slug={slug} path={`/${slug}`} noindex={slug === 'bedankt'} />

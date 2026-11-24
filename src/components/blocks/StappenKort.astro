@@ -1,0 +1,28 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import Belkaart from '../ui/Belkaart.astro';
+import { safeUrl } from '../../lib/util';
+import type { PaginaBlokkenStappenKort } from '../../../tina/__generated__/types';
+import type { Settings } from '../../lib/data';
+
+interface Props {
+  data: PaginaBlokkenStappenKort;
+  settings?: Settings | null;
+}
+const { data: d, settings } = Astro.props;
+---
+<section class="blush" data-tina-field={tinaField(d)}>
+  <div class="wrap sec wnu">
+    <div class="stack" style="gap:22px">
+      {d.eyebrow && <span class="eb" data-tina-field={tinaField(d, 'eyebrow')}>{d.eyebrow}</span>}
+      <h2 data-tina-field={tinaField(d, 'titel')}>{d.titel}</h2>
+      <ol class="steps">
+        {d.stappen?.map((s) => s && (
+          <li data-tina-field={tinaField(s)}><strong data-tina-field={tinaField(s, 'titel')}>{s.titel}</strong><span data-tina-field={tinaField(s, 'tekst')}>{s.tekst}</span></li>
+        ))}
+      </ol>
+      {d.link?.tekst && <a href={safeUrl(d.link.url) || '/'} class="link" data-tina-field={tinaField(d.link, 'tekst')}>{d.link.tekst}</a>}
+    </div>
+    {d.belkaart?.toon && <Belkaart data={d.belkaart} settings={settings} />}
+  </div>
+</section>

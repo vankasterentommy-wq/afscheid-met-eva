@@ -1,0 +1,57 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import Icon from '../ui/Icon.astro';
+import Img from '../ui/Img.astro';
+import { mailHref, telHref, waHref } from '../../lib/util';
+import type { PaginaBlokkenContact } from '../../../tina/__generated__/types';
+import type { Settings } from '../../lib/data';
+
+interface Props {
+  data: PaginaBlokkenContact;
+  settings?: Settings | null;
+}
+const { data: d, settings: s } = Astro.props;
+const c = s?.contact;
+---
+<section data-tina-field={tinaField(d)}>
+  <div class="wrap sec cgrid">
+    <div class="stack" style="gap:20px">
+      <div class="clist">
+        <a href={telHref(s)} class="crow"><span class="ic"><Icon name="phone" /></span><span><b>{c?.telefoon}</b><small data-tina-field={tinaField(d, 'belTekst')}>{d.belTekst}</small></span></a>
+        <a href={waHref(s)} class="crow"><span class="ic"><Icon name="chat" /></span><span><b data-tina-field={tinaField(d, 'whatsappTitel')}>{d.whatsappTitel}</b><small data-tina-field={tinaField(d, 'whatsappTekst')}>{d.whatsappTekst}</small></span></a>
+        <a href={mailHref(s)} class="crow"><span class="ic"><Icon name="mail" /></span><span><b>{c?.email}</b><small data-tina-field={tinaField(d, 'emailTekst')}>{d.emailTekst}</small></span></a>
+        <div class="crow"><span class="ic"><Icon name="pin" /></span><span><b>{c?.werkgebied}</b><small data-tina-field={tinaField(d, 'gebiedTekst')}>{d.gebiedTekst}</small></span></div>
+      </div>
+      <Img
+        class="arch hide-m"
+        src={d.foto}
+        alt={d.fotoAlt}
+        style={`height:360px${d.fotoPositie ? `;object-position:${d.fotoPositie}` : ''};max-width:420px`}
+        widths={[420, 840]}
+        sizes="420px"
+        field={tinaField(d, 'foto')}
+      />
+    </div>
+    <form class="box" name="contact" method="POST" action="/bedankt" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact" />
+      <p class="hp" aria-hidden="true"><label>Niet invullen <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+      <h2 style="font-size:28px" data-tina-field={tinaField(d, 'formTitel')}>{d.formTitel}</h2>
+      <fieldset>
+        <legend data-tina-field={tinaField(d, 'formVraag')}>{d.formVraag}</legend>
+        <div class="radios">
+          {d.onderwerpen?.map((o, i) => o && (
+            <label data-tina-field={tinaField(d, 'onderwerpen', i)}><input type="radio" name="onderwerp" value={o} checked={i === 0} />{o}</label>
+          ))}
+        </div>
+      </fieldset>
+      <label class="fl"><span data-tina-field={tinaField(d, 'labelNaam')}>{d.labelNaam}</span><input type="text" name="naam" autocomplete="name" required /></label>
+      <div class="frow">
+        <label class="fl"><span data-tina-field={tinaField(d, 'labelTelefoon')}>{d.labelTelefoon}</span><input type="tel" name="telefoon" autocomplete="tel" /></label>
+        <label class="fl"><span data-tina-field={tinaField(d, 'labelEmail')}>{d.labelEmail}</span><input type="email" name="email" autocomplete="email" /></label>
+      </div>
+      <label class="fl"><span data-tina-field={tinaField(d, 'labelBericht')}>{d.labelBericht}</span><textarea name="bericht" rows="4" required></textarea></label>
+      <button type="submit" class="btn btn-p" data-tina-field={tinaField(d, 'knopTekst')}>{d.knopTekst}</button>
+      {d.formNoot && <span class="muted" style="font-size:14.5px" data-tina-field={tinaField(d, 'formNoot')}>{d.formNoot}</span>}
+    </form>
+  </div>
+</section>

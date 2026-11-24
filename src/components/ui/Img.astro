@@ -1,0 +1,58 @@
+---
+/**
+ * Foto's uit public/img (Tina-media). In de Netlify-build via Astro getImage()
+ * → Netlify Image CDN (AVIF/WebP, srcset). Lokaal en in de bewerk-preview: gewone <img>.
+ * Alleen de hero-foto laadt eager; de rest lazy.
+ */
+import { getImage } from 'astro:assets';
+import { toLocalPath, readDims } from '../../lib/image';
+
+interface Props {
+  src?: string | null;
+  alt?: string | null;
+  class?: string;
+  style?: string;
+  eager?: boolean;
+  /** Alleen voor de LCP-foto (hero). */
+  priority?: boolean;
+  widths?: number[];
+  sizes?: string;
+  field?: string;
+  decorative?: boolean;
+}
+const { src, alt, class: cls, style, eager = false, priority = false, widths = [480, 960], sizes = '100vw', field, decorative = false } = Astro.props;
+const local = toLocalPath(src);
+const dims = local ? readDims(local) : null;
+let url = src ?? '';
+let srcset: string | undefined;
+const cdn = process.env.NETLIFY === 'true' && !!dims && !!local;
+if (cdn && local && dims) {
+  const usable = widths.filter((w) => w < dims.width);
+  const img = await getImage({
+    src: local,
+    width: dims.width,
+    height: dims.height,
+    widths: usable.length ? [...usable, dims.width] : undefined,
+    sizes,
+  });
+  url = img.src;
+  srcset = img.srcSet.attribute || undefined;
+}
+---
+{url && (
+  <img
+    class={cls}
+    src={url}
+    srcset={srcset}
+    sizes={srcset ? sizes : undefined}
+    alt={decorative ? '' : (alt ?? '')}
+    aria-hidden={decorative ? 'true' : undefined}
+    width={dims?.width}
+    height={dims?.height}
+    loading={eager ? 'eager' : 'lazy'}
+    fetchpriority={priority ? 'high' : undefined}
+    decoding={eager ? undefined : 'async'}
+    style={style}
+    data-tina-field={field}
+  />
+)}

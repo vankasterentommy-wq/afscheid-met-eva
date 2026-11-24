@@ -1,0 +1,166 @@
+---
+import '@fontsource/yeseva-one/latin-400.css';
+import '@fontsource/jost/latin-400.css';
+import '@fontsource/jost/latin-500.css';
+import '../styles/global.css';
+import yeseva from '@fontsource/yeseva-one/files/yeseva-one-latin-400-normal.woff2?url';
+import jost400 from '@fontsource/jost/files/jost-latin-400-normal.woff2?url';
+import jost500 from '@fontsource/jost/files/jost-latin-500-normal.woff2?url';
+import TinaIsland from '@tinacms/astro/TinaIsland.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Mbar from '../components/layout/Mbar.astro';
+import { getSettings } from '../lib/data';
+import { islands } from '../lib/islands';
+
+interface Props {
+  /** URL-pad van de pagina, bv. "/" of "/kosten". */
+  path: string;
+  title?: string | null;
+  description?: string | null;
+  noindex?: boolean;
+}
+const { path, title, description, noindex = false } = Astro.props;
+
+const settingsRes = await getSettings();
+const s = settingsRes.data.instellingen;
+
+const site = Astro.site ?? new URL('https://afscheidmeteva.nl');
+const canonical = new URL(path, site).href;
+const pageTitle = title || 'Afscheid met Eva – uitvaartzorg in Best';
+const ogImage = new URL('/og-image.jpg', site).href;
+const naam = s?.bedrijf?.naam ?? 'Afscheid met Eva';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': new URL('/#organisatie', site).href,
+  name: naam,
+  description: 'Uitvaartverzorger in Best en omgeving. Register Uitvaartverzorger, dag en nacht bereikbaar.',
+  url: new URL('/', site).href,
+  logo: new URL('/img/logo2-bordeaux.png', site).href,
+  image: new URL('/img/eva-bos.jpg', site).href,
+  telephone: s?.contact?.telefoonLink ?? undefined,
+  address: { '@type': 'PostalAddress', addressLocality: 'Best', addressCountry: 'NL' },
+  areaServed: [{ '@type': 'City', name: 'Best' }, s?.contact?.werkgebied].filter(Boolean),
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '00:00',
+    closes: '23:59',
+  },
+  identifier: s?.bedrijf?.kvk ? { '@type': 'PropertyValue', propertyID: 'KvK', value: s.bedrijf.kvk } : undefined,
+  vatID: s?.bedrijf?.btw ?? undefined,
+};
+---
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#653548" />
+    <title>{pageTitle}</title>
+    {description && <meta name="description" content={description} />}
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+    <link rel="icon" href="/img/favicon-48.png" sizes="48x48" type="image/png" />
+    <link rel="apple-touch-icon" href="/img/apple-touch.png" />
+    <link rel="preload" href={jost400} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={jost500} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={yeseva} as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="nl_NL" />
+    <meta property="og:site_name" content={naam} />
+    <meta property="og:title" content={pageTitle} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Afscheid met Eva – uitvaartzorg in Best" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    {description && <meta name="twitter:description" content={description} />}
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    {path === '/' && (
+      <script is:inline>
+        /* Oude links uit de preview (#kosten e.d.) doorsturen naar de echte pagina's */
+        (function () {
+          var m = { overlijden: 'overlijden-melden', uitvaart: 'uitvaart-regelen', afscheid: 'uitvaart-regelen', kosten: 'kosten', 'voor-overlijden': 'voor-overlijden', wensen: 'voor-overlijden', 'over-eva': 'over-eva', contact: 'contact' };
+          var h = location.hash.slice(1);
+          if (m[h]) location.replace('/' + m[h]);
+        })();
+      </script>
+    )}
+  </head>
+  <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"></path></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"></path></symbol>
+    </svg>
+
+    <TinaIsland name="header" wrapper={islands.header.wrapper} params={{ path }}>
+      <Header settings={s} path={path} />
+    </TinaIsland>
+
+    <slot />
+
+    <TinaIsland name="footer" wrapper={islands.footer.wrapper}>
+      <Footer settings={s} />
+    </TinaIsland>
+
+    <TinaIsland name="mbar" wrapper={islands.mbar.wrapper}>
+      <Mbar settings={s} />
+    </TinaIsland>
+
+    <script>
+      // Mobiel menu (event delegation, zodat het ook werkt na een verversing in Tina)
+      const setMenu = (open: boolean) => {
+        const nav = document.getElementById('menu');
+        const burger = document.querySelector<HTMLButtonElement>('.burger');
+        const bar = document.querySelector('.bar');
+        if (!nav || !burger) return;
+        if (open && bar) nav.style.top = `${bar.getBoundingClientRect().bottom}px`;
+        nav.classList.toggle('open', open);
+        document.body.classList.toggle('menu-open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        burger.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+        burger.querySelector('use')?.setAttribute('href', open ? '#i-x' : '#i-menu');
+      };
+      document.addEventListener('click', (e) => {
+        const t = e.target as Element | null;
+        if (t?.closest('.burger')) setMenu(!document.getElementById('menu')?.classList.contains('open'));
+        else if (t?.closest('#menu a')) setMenu(false);
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && document.getElementById('menu')?.classList.contains('open')) setMenu(false);
+      });
+
+      // Overlijden melden: op desktop alle stappen open (mobiel alleen de eerste)
+      if (window.innerWidth > 860) document.querySelectorAll<HTMLDetailsElement>('details.step').forEach((d) => (d.open = true));
+
+      // Swipebare kaarten: bolletjes volgen de scrollpositie
+      document.addEventListener(
+        'scroll',
+        (e) => {
+          const row = e.target as HTMLElement;
+          if (!(row instanceof HTMLElement) || !row.matches('.cards,.gallery')) return;
+          const dots = row.nextElementSibling;
+          if (!dots || !dots.classList.contains('dots')) return;
+          const first = row.firstElementChild as HTMLElement | null;
+          if (!first) return;
+          const i = Math.round(row.scrollLeft / (first.offsetWidth + 14));
+          dots.querySelectorAll<HTMLElement>('i').forEach((d, k) => {
+            d.style.opacity = k === i ? '1' : '.45';
+            d.style.background = k === i ? '#653548' : '#A9968E';
+          });
+        },
+        { capture: true, passive: true },
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import Icon from '../ui/Icon.astro';
+import Img from '../ui/Img.astro';
+import { mailHref, safeUrl, telHref, waHref } from '../../lib/util';
+import type { Settings } from '../../lib/data';
+
+interface Props {
+  settings?: Settings | null;
+}
+const { settings: s } = Astro.props;
+const c = s?.contact;
+const f = s?.footer;
+const cb = s?.callband;
+---
+<Img class="fdeco" src="/img/stokroos-ivoor.png" decorative widths={[180]} sizes="90px" />
+<div class="fcta">
+  <div class="wrap">
+    <div class="stack" style="gap:6px">
+      <h2 data-tina-field={cb ? tinaField(cb, 'titel') : undefined}>{cb?.titel}</h2>
+      <span style="opacity:.9" data-tina-field={cb ? tinaField(cb, 'tekst') : undefined}>{cb?.tekst}</span>
+    </div>
+    <div class="btns">
+      <a href={telHref(s)} class="btn btn-l"><Icon name="phone" />{s?.knoppen?.belMet} {c?.telefoon}</a>
+      <a href="/contact" class="btn btn-o" data-tina-field={cb ? tinaField(cb, 'knopBericht') : undefined}>{cb?.knopBericht}</a>
+    </div>
+  </div>
+</div>
+<div class="wrap fmain">
+  <div class="brand">
+    <img src="/img/logo2-ivoor.png" alt="Afscheid met Eva" width="640" height="233" loading="lazy" decoding="async" />
+    <span style="max-width:300px" data-tina-field={f ? tinaField(f, 'tekst') : undefined}>{f?.tekst}</span>
+  </div>
+  <div>
+    <strong>{f?.kopContact}</strong>
+    <a href={telHref(s)}>{c?.telefoon}</a>
+    <a href={waHref(s)}>{s?.knoppen?.whatsappKort}</a>
+    <a href={mailHref(s)}>{c?.email}</a>
+    <span>{c?.bereikbaar}</span>
+  </div>
+  <div>
+    <strong>{f?.kopMenu}</strong>
+    {s?.menu?.map((m) => m && <a href={safeUrl(m.link) || '/'}>{m.tekst}</a>)}
+  </div>
+  <div>
+    <strong>{f?.kopWerkgebied}</strong>
+    <span>{c?.werkgebied}</span>
+    <span>{c?.functie}</span>
+  </div>
+  <div class="legal">
+    <span>{f?.copyright}</span>
+    <span>KvK {s?.bedrijf?.kvk} · btw {s?.bedrijf?.btw}</span>
+    <span><a href="/privacy">{f?.privacy}</a> · <a href="/voorwaarden">{f?.voorwaarden}</a></span>
+  </div>
+</div>

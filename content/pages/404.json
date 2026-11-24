@@ -1,0 +1,14 @@
+{
+  "seo": {
+    "titel": "Pagina niet gevonden – Afscheid met Eva",
+    "omschrijving": "Deze pagina bestaat niet (meer)."
+  },
+  "blokken": [
+    {
+      "_template": "paginakop",
+      "eyebrow": "404",
+      "titel": "Pagina niet gevonden",
+      "intro": "Deze pagina bestaat niet (meer). Ga terug naar de homepage of bel gerust."
+    }
+  ]
+}

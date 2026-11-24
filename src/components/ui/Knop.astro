@@ -1,0 +1,19 @@
+---
+import Icon from './Icon.astro';
+import { knopHref, type KnopLike } from '../../lib/util';
+import type { Settings } from '../../lib/data';
+
+interface Props {
+  knop: KnopLike;
+  settings?: Settings | null;
+  /** Op donkere achtergrond (belkaart): gevuld = ivoor, omlijnd = licht omlijnd. */
+  donker?: boolean;
+  field?: string;
+  class?: string;
+}
+const { knop, settings, donker = false, field, class: extra } = Astro.props;
+const primair = knop.stijl !== 'secundair';
+const cls = ['btn', donker ? (primair ? 'btn-l' : 'btn-o') : primair ? 'btn-p' : 'btn-s', extra].filter(Boolean).join(' ');
+const icon = knop.soort === 'bellen' ? 'phone' : knop.soort === 'whatsapp' ? 'chat' : null;
+---
+<a href={knopHref(knop, settings)} class={cls} data-tina-field={field}>{icon && <Icon name={icon} />}{knop.tekst}</a>

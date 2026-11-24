@@ -1,0 +1,18 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import Img from '../ui/Img.astro';
+import type { PaginaBlokkenCitaat } from '../../../tina/__generated__/types';
+
+interface Props {
+  data: PaginaBlokkenCitaat;
+}
+const { data: d } = Astro.props;
+---
+<section class="quoteband" data-tina-field={tinaField(d)}>
+  <div class="wrap">
+    <Img class="deco" src="/img/stokroos-ivoor.png" decorative widths={[92]} sizes="46px" />
+    <q data-tina-field={tinaField(d, 'citaat')}>{d.citaat}</q>
+    {d.naam && <span data-tina-field={tinaField(d, 'naam')}>{d.naam}</span>}
+    {d.toelichting && <p class="qsub" data-tina-field={tinaField(d, 'toelichting')}>{d.toelichting}</p>}
+  </div>
+</section>

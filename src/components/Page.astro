@@ -1,0 +1,23 @@
+---
+/** Eén contentpagina: haalt content/pages/<slug>.json op en rendert de blokken in een bewerkbare regio. */
+import TinaIsland from '@tinacms/astro/TinaIsland.astro';
+import Base from '../layouts/Base.astro';
+import Blocks from './blocks/Blocks.astro';
+import { getPage, getSettings } from '../lib/data';
+import { islands } from '../lib/islands';
+
+interface Props {
+  slug: string;
+  path: string;
+  noindex?: boolean;
+}
+const { slug, path, noindex } = Astro.props;
+const [page, settings] = await Promise.all([getPage(slug), getSettings()]);
+const p = page.data.pagina;
+if (!p) throw new Error(`Pagina "${slug}" niet gevonden in content/pages`);
+---
+<Base path={path} title={p.seo?.titel} description={p.seo?.omschrijving} noindex={noindex}>
+  <TinaIsland name="page" wrapper={islands.page.wrapper} params={{ slug }} primary>
+    <Blocks page={p} settings={settings.data.instellingen} />
+  </TinaIsland>
+</Base>

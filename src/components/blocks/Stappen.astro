@@ -1,0 +1,53 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import Belkaart from '../ui/Belkaart.astro';
+import Img from '../ui/Img.astro';
+import { paras } from '../../lib/util';
+import type { PaginaBlokkenStappen } from '../../../tina/__generated__/types';
+import type { Settings } from '../../lib/data';
+
+interface Props {
+  data: PaginaBlokkenStappen;
+  settings?: Settings | null;
+}
+const { data: d, settings } = Astro.props;
+const c = d.checklist;
+---
+<section data-tina-field={tinaField(d)}>
+  <div class="wrap sec two">
+    <div class="stack" style="gap:24px">
+      {d.belkaart?.toon && <Belkaart data={d.belkaart} settings={settings} />}
+      {d.titel && <h2 data-tina-field={tinaField(d, 'titel')}>{d.titel}</h2>}
+      {d.hint && <p class="tlhint" data-tina-field={tinaField(d, 'hint')}>{d.hint}</p>}
+      <ol class="tl">
+        {d.stappen?.map((s, i) => s && (
+          <li>
+            <details class="step" open={i === 0} data-tina-field={tinaField(s)}>
+              <summary data-tina-field={tinaField(s, 'titel')}>{s.titel}</summary>
+              {paras(s.tekst).map((p) => <p data-tina-field={tinaField(s, 'tekst')}>{p}</p>)}
+              {s.noot && <p class="note" data-tina-field={tinaField(s, 'noot')}>{s.noot}</p>}
+            </details>
+          </li>
+        ))}
+      </ol>
+    </div>
+    <div class="stack" style="gap:24px">
+      {c && (c.titel || c.lijst?.length) && (
+        <div class="box" data-tina-field={tinaField(c)}>
+          {c.titel && <h3 data-tina-field={tinaField(c, 'titel')}>{c.titel}</h3>}
+          {c.lijst?.length ? <ul class="check">{c.lijst.map((l, i) => <li data-tina-field={tinaField(c, 'lijst', i)}>{l}</li>)}</ul> : null}
+          {c.noot && <span class="muted" style="font-size:15px" data-tina-field={tinaField(c, 'noot')}>{c.noot}</span>}
+        </div>
+      )}
+      <Img
+        class="arch hide-m"
+        src={d.foto}
+        alt={d.fotoAlt}
+        style={`height:420px${d.fotoPositie ? `;object-position:${d.fotoPositie}` : ''}`}
+        widths={[480, 720]}
+        sizes="(min-width: 861px) 35vw, 1px"
+        field={tinaField(d, 'foto')}
+      />
+    </div>
+  </div>
+</section>

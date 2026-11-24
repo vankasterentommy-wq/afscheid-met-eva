@@ -1,0 +1,18 @@
+{
+  "seo": {
+    "titel": "Voorwaarden – Afscheid met Eva",
+    "omschrijving": "Algemene voorwaarden van Afscheid met Eva."
+  },
+  "blokken": [
+    {
+      "_template": "paginakop",
+      "eyebrow": "Voorwaarden",
+      "titel": "Algemene voorwaarden"
+    },
+    {
+      "_template": "tekst",
+      "achtergrond": "ivoor",
+      "tekst": "[Algemene voorwaarden – tekst volgt]"
+    }
+  ]
+}

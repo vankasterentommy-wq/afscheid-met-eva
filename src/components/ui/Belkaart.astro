@@ -1,0 +1,25 @@
+---
+import Img from './Img.astro';
+import Knop from './Knop.astro';
+import { tinaField } from '@tinacms/astro/tina-field';
+import { telHref } from '../../lib/util';
+import type { Settings } from '../../lib/data';
+
+interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  data: any;
+  settings?: Settings | null;
+}
+const { data: b, settings } = Astro.props;
+---
+<div class="callbox" data-tina-field={tinaField(b)}>
+  <Img class="deco" src="/img/stokroos-ivoor.png" decorative widths={[60]} sizes="30px" />
+  {b.metFoto && (
+    <span class="who"><Img src={b.foto} alt={b.naam} widths={[96]} sizes="48px" field={tinaField(b, 'foto')} /><span><b data-tina-field={tinaField(b, 'naam')}>{b.naam}</b><small data-tina-field={tinaField(b, 'functie')}>{b.functie}</small></span></span>
+  )}
+  <span class="t" data-tina-field={tinaField(b, 'label')}>{b.label}</span>
+  <a href={telHref(settings)} class="n">{settings?.contact?.telefoon}</a>
+  {b.knoppen?.length ? (
+    <div class="btns">{b.knoppen.map((k: any, i: number) => k && <Knop knop={k} settings={settings} donker field={tinaField(b, 'knoppen', i)} />)}</div>
+  ) : null}
+</div>

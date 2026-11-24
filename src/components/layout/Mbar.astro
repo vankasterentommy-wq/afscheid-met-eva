@@ -1,0 +1,12 @@
+---
+import Icon from '../ui/Icon.astro';
+import { telHref, waHref } from '../../lib/util';
+import type { Settings } from '../../lib/data';
+
+interface Props {
+  settings?: Settings | null;
+}
+const { settings: s } = Astro.props;
+---
+<a href={telHref(s)} class="btn btn-p"><Icon name="phone" />{s?.knoppen?.bel247}</a>
+<a href={waHref(s)} class="btn btn-s"><Icon name="chat" />{s?.knoppen?.whatsappKort}</a>

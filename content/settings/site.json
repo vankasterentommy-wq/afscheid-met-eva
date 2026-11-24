@@ -1,0 +1,44 @@
+{
+  "contact": {
+    "telefoon": "06 51 58 73 26",
+    "telefoonLink": "+31651587326",
+    "whatsapp": "31651587326",
+    "email": "[info@afscheidmeteva.nl]",
+    "werkgebied": "Best en omgeving",
+    "bereikbaar": "Dag en nacht bereikbaar",
+    "functie": "Register Uitvaartverzorger"
+  },
+  "bedrijf": {
+    "naam": "Afscheid met Eva",
+    "kvk": "42209713",
+    "btw": "NL005586504B32"
+  },
+  "menu": [
+    { "tekst": "Overlijden melden", "link": "/overlijden-melden" },
+    { "tekst": "Uitvaart regelen", "link": "/uitvaart-regelen" },
+    { "tekst": "Kosten", "link": "/kosten" },
+    { "tekst": "Vóór overlijden", "link": "/voor-overlijden" },
+    { "tekst": "Over Eva", "link": "/over-eva" },
+    { "tekst": "Contact", "link": "/contact" }
+  ],
+  "knoppen": {
+    "bel247": "Bel 24/7",
+    "belMet": "Bel",
+    "whatsapp": "Stuur een WhatsApp",
+    "whatsappKort": "WhatsApp"
+  },
+  "callband": {
+    "titel": "Kan ik iets voor je betekenen?",
+    "tekst": "Bel of app gerust, ook als je alleen een vraag hebt.",
+    "knopBericht": "Stuur een bericht"
+  },
+  "footer": {
+    "tekst": "Een frisse kijk op uitvaartzorg, met aandacht voor wat écht telt. Ongeacht waar je verzekerd bent.",
+    "kopContact": "Contact",
+    "kopMenu": "Snel naar",
+    "kopWerkgebied": "Werkgebied",
+    "copyright": "© 2026 Afscheid met Eva",
+    "privacy": "Privacy",
+    "voorwaarden": "Voorwaarden"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "afscheid-met-eva",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tinacms dev -c \"astro dev\"",
+    "build": "tinacms build && astro build",
+    "build:local": "tinacms build --local --skip-cloud-checks -c \"astro build\"",
+    "preview": "astro preview",
+    "check": "astro check",
+    "astro": "astro",
+    "postinstall": "node scripts/patch-tina-windows.mjs"
+  },
+  "dependencies": {
+    "@astrojs/netlify": "^8.2.14",
+    "@astrojs/sitemap": "^3.7.6",
+    "@fontsource/jost": "^5.3.0",
+    "@fontsource/yeseva-one": "^5.3.0",
+    "@tinacms/astro": "^0.8.0",
+    "astro": "^7.4.13",
+    "tinacms": "^3.15.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@tinacms/cli": "^4.0.5",
+    "@types/react": "^18.3.31",
+    "pixelmatch": "^8.0.0",
+    "playwright": "^1.65.1",
+    "pngjs": "^7.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.35.5",
+    "typescript": "^5.9.3"
+  }
+}

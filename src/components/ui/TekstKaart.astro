@@ -1,0 +1,24 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import { paras } from '../../lib/util';
+import type { PaginaBlokkenChecklistKaarten } from '../../../tina/__generated__/types';
+
+interface Props {
+  data: PaginaBlokkenChecklistKaarten;
+}
+const { data: k } = Astro.props;
+---
+<div class:list={['box', { extra: !!k.label }]} data-tina-field={tinaField(k)}>
+  {k.label && <span class="sub" data-tina-field={tinaField(k, 'label')}>{k.label}</span>}
+  {k.titel && <h3 data-tina-field={tinaField(k, 'titel')}>{k.titel}</h3>}
+  {k.prijs && <b class="pr" data-tina-field={tinaField(k, 'prijs')}>{k.prijs}</b>}
+  {paras(k.tekst).map((p) => <p style="color:var(--text);font-size:16px" data-tina-field={tinaField(k, 'tekst')}>{p}</p>)}
+  {k.lijst?.length ? (
+    k.alsLabels ? (
+      <div class="chips">{k.lijst.map((l, i) => <span data-tina-field={tinaField(k, 'lijst', i)}>{l}</span>)}</div>
+    ) : (
+      <ul class="check">{k.lijst.map((l, i) => <li data-tina-field={tinaField(k, 'lijst', i)}>{l}</li>)}</ul>
+    )
+  ) : null}
+  {k.noot && <p class="muted" style="font-size:15px" data-tina-field={tinaField(k, 'noot')}>{k.noot}</p>}
+</div>

@@ -1,0 +1,18 @@
+{
+  "seo": {
+    "titel": "Privacy – Afscheid met Eva",
+    "omschrijving": "Privacyverklaring van Afscheid met Eva."
+  },
+  "blokken": [
+    {
+      "_template": "paginakop",
+      "eyebrow": "Privacy",
+      "titel": "Privacyverklaring"
+    },
+    {
+      "_template": "tekst",
+      "achtergrond": "ivoor",
+      "tekst": "[Privacyverklaring – tekst volgt]"
+    }
+  ]
+}

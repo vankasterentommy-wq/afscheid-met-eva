@@ -1,0 +1,34 @@
+{
+  "seo": {
+    "titel": "Contact – Afscheid met Eva",
+    "omschrijving": "Neem gerust contact op. Voor het melden van een overlijden bel je mij direct, dag en nacht: 06 51 58 73 26. Voor al het andere mag je ook een bericht sturen."
+  },
+  "blokken": [
+    {
+      "_template": "paginakop",
+      "eyebrow": "Contact",
+      "titel": "Neem gerust contact op",
+      "intro": "Voor het melden van een overlijden bel je mij direct, dag en nacht. Voor al het andere mag je ook een bericht sturen."
+    },
+    {
+      "_template": "contact",
+      "belTekst": "Bellen, dag en nacht",
+      "whatsappTitel": "WhatsApp",
+      "whatsappTekst": "Ik reageer zo snel mogelijk",
+      "emailTekst": "E-mail",
+      "gebiedTekst": "Ik kom bij jullie thuis langs",
+      "foto": "/img/eva-portret.jpg",
+      "fotoAlt": "Portret van Eva",
+      "fotoPositie": "50% 22%",
+      "formTitel": "Stuur een bericht",
+      "formVraag": "Waarmee kan ik je helpen?",
+      "onderwerpen": ["Kennismaking", "Kostenindicatie", "Vóór overlijden", "Iets anders"],
+      "labelNaam": "Naam",
+      "labelTelefoon": "Telefoon",
+      "labelEmail": "E-mail",
+      "labelBericht": "Bericht",
+      "knopTekst": "Versturen",
+      "formNoot": "Een overlijden melden? Bel liever direct: 06 51 58 73 26."
+    }
+  ]
+}

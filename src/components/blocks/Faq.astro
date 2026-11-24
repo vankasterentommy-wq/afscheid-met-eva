@@ -1,0 +1,25 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import { bgClass, paras, safeUrl } from '../../lib/util';
+import type { PaginaBlokkenFaq } from '../../../tina/__generated__/types';
+
+interface Props {
+  data: PaginaBlokkenFaq;
+}
+const { data: d } = Astro.props;
+---
+<section class={bgClass(d.achtergrond)} data-tina-field={tinaField(d)}>
+  <div class="wrap sec faq">
+    <div class="stack" style="gap:8px;margin-bottom:18px">
+      {d.eyebrow && <span class="eb" data-tina-field={tinaField(d, 'eyebrow')}>{d.eyebrow}</span>}
+      {d.titel && <h2 data-tina-field={tinaField(d, 'titel')}>{d.titel}</h2>}
+    </div>
+    {d.vragen?.map((v) => v && (
+      <details data-tina-field={tinaField(v)}>
+        <summary data-tina-field={tinaField(v, 'vraag')}>{v.vraag}</summary>
+        {paras(v.antwoord).map((p) => <p data-tina-field={tinaField(v, 'antwoord')}>{p}</p>)}
+        {v.linkTekst && <p><a href={safeUrl(v.linkUrl) || '/'} data-tina-field={tinaField(v, 'linkTekst')}>{v.linkTekst}</a></p>}
+      </details>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,42 @@
+---
+/** Rendert alle blokken van een pagina, in de volgorde die Eva in Tina kiest. */
+import type { PageData, Settings } from '../../lib/data';
+import Hero from './Hero.astro';
+import Paginakop from './Paginakop.astro';
+import FotoTekst from './FotoTekst.astro';
+import Kaarten from './Kaarten.astro';
+import StappenKort from './StappenKort.astro';
+import Stappen from './Stappen.astro';
+import Checklist from './Checklist.astro';
+import Tarieven from './Tarieven.astro';
+import Faq from './Faq.astro';
+import Citaat from './Citaat.astro';
+import Ervaringen from './Ervaringen.astro';
+import Contact from './Contact.astro';
+import Tekst from './Tekst.astro';
+
+interface Props {
+  page?: PageData | null;
+  settings?: Settings | null;
+}
+const { page, settings } = Astro.props;
+---
+{page?.blokken?.map((b) => {
+  if (!b) return null;
+  switch (b.__typename) {
+    case 'PaginaBlokkenHero': return <Hero data={b} settings={settings} />;
+    case 'PaginaBlokkenPaginakop': return <Paginakop data={b} />;
+    case 'PaginaBlokkenFotoTekst': return <FotoTekst data={b} settings={settings} />;
+    case 'PaginaBlokkenKaarten': return <Kaarten data={b} />;
+    case 'PaginaBlokkenStappenKort': return <StappenKort data={b} settings={settings} />;
+    case 'PaginaBlokkenStappen': return <Stappen data={b} settings={settings} />;
+    case 'PaginaBlokkenChecklist': return <Checklist data={b} />;
+    case 'PaginaBlokkenTarieven': return <Tarieven data={b} />;
+    case 'PaginaBlokkenFaq': return <Faq data={b} />;
+    case 'PaginaBlokkenCitaat': return <Citaat data={b} />;
+    case 'PaginaBlokkenErvaringen': return <Ervaringen data={b} />;
+    case 'PaginaBlokkenContact': return <Contact data={b} settings={settings} />;
+    case 'PaginaBlokkenTekst': return <Tekst data={b} />;
+    default: return null;
+  }
+})}

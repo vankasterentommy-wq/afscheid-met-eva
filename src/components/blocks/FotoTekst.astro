@@ -1,0 +1,59 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import Img from '../ui/Img.astro';
+import Knop from '../ui/Knop.astro';
+import { bgClass, lines, paras, safeUrl } from '../../lib/util';
+import type { PaginaBlokkenFotoTekst } from '../../../tina/__generated__/types';
+import type { Settings } from '../../lib/data';
+
+interface Props {
+  data: PaginaBlokkenFotoTekst;
+  settings?: Settings | null;
+}
+const { data: d, settings } = Astro.props;
+const v = (d.variant ?? '').split(/\s+/);
+const paginakop = v.includes('paginakop');
+const gap = paginakop || v.includes('gap18') ? 'gap:18px' : v.includes('gap16') ? 'gap:16px' : undefined;
+const pos = d.fotoPositie ? `object-position:${d.fotoPositie}` : undefined;
+const tekst = paras(d.tekst);
+const heeftChips = !!d.chips?.length;
+const Kop = paginakop ? 'h1' : 'h2';
+const titel = lines(d.titel);
+---
+<section class={bgClass(d.achtergrond)} data-tina-field={tinaField(d)}>
+  <div class:list={['wrap sec split', { rev: d.fotoRechts }]} style={paginakop ? 'padding-top:28px' : undefined}>
+    <div class="media">
+      <Img
+        class={paginakop ? 'fam' : 'arch'}
+        src={d.foto}
+        alt={d.fotoAlt}
+        style={pos}
+        eager={paginakop}
+        priority={paginakop}
+        widths={[480, 720, 960]}
+        sizes="(min-width: 861px) 40vw, 100vw"
+        field={tinaField(d, 'foto')}
+      />
+    </div>
+    <div class="stack" style={gap}>
+      {d.eyebrow && <span class="eb" data-tina-field={tinaField(d, 'eyebrow')}>{d.eyebrow}</span>}
+      <Kop data-tina-field={tinaField(d, 'titel')}>{titel.map((l, i) => <>{i > 0 && <br />}{l}</>)}</Kop>
+      {tekst.map((p, i) =>
+        paginakop ? (
+          <p class="lead" data-tina-field={tinaField(d, 'tekst')}>{p}</p>
+        ) : (
+          <p style={`color:var(--text)${heeftChips && i === tekst.length - 1 ? ';margin-bottom:-4px' : ''}`} data-tina-field={tinaField(d, 'tekst')}>{p}</p>
+        )
+      )}
+      {d.lijst?.length ? (
+        <ul class:list={['check', { two: v.includes('lijst2') }]}>{d.lijst.map((l, i) => <li data-tina-field={tinaField(d, 'lijst', i)}>{l}</li>)}</ul>
+      ) : null}
+      {heeftChips && <div class="chips">{d.chips!.map((c, i) => <span data-tina-field={tinaField(d, 'chips', i)}>{c}</span>)}</div>}
+      {paras(d.tekstNa).map((p) => <p style="color:var(--text)" data-tina-field={tinaField(d, 'tekstNa')}>{p}</p>)}
+      {d.knoppen?.length ? (
+        <div class="btns">{d.knoppen.map((k, i) => k && <Knop knop={k} settings={settings} field={tinaField(d, 'knoppen', i)} />)}</div>
+      ) : null}
+      {d.link?.tekst && <a href={safeUrl(d.link.url) || '/'} class="link" data-tina-field={tinaField(d.link, 'tekst')}>{d.link.tekst}</a>}
+    </div>
+  </div>
+</section>

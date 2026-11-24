@@ -1,0 +1,19 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import { bgClass, paras } from '../../lib/util';
+import type { PaginaBlokkenTekst } from '../../../tina/__generated__/types';
+
+interface Props {
+  data: PaginaBlokkenTekst;
+}
+const { data: d } = Astro.props;
+---
+<section class={bgClass(d.achtergrond)} data-tina-field={tinaField(d)}>
+  <div class="wrap sec">
+    <div class="readcol">
+      {d.eyebrow && <span class="eb" data-tina-field={tinaField(d, 'eyebrow')}>{d.eyebrow}</span>}
+      {d.titel && <h2 data-tina-field={tinaField(d, 'titel')}>{d.titel}</h2>}
+      {paras(d.tekst).map((p) => <p data-tina-field={tinaField(d, 'tekst')}>{p}</p>)}
+    </div>
+  </div>
+</section>

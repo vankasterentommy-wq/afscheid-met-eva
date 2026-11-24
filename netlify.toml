@@ -1,0 +1,30 @@
+[build]
+  command = "npm run build"   # = tinacms build && astro build
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Gehashte bestanden (CSS, JS, fonts) mogen voor altijd in de cache
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Foto's: een dag cachen (Eva kan een foto met dezelfde naam vervangen)
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Het beheerscherm niet laten indexeren
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

@@ -1,0 +1,14 @@
+{
+  "seo": {
+    "titel": "Bedankt voor je bericht – Afscheid met Eva",
+    "omschrijving": "Je bericht is verstuurd."
+  },
+  "blokken": [
+    {
+      "_template": "paginakop",
+      "eyebrow": "Bericht verstuurd",
+      "titel": "Bedankt voor je bericht",
+      "intro": "[Bedanktekst – volgt van Eva]"
+    }
+  ]
+}

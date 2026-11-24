@@ -1,0 +1,33 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import Img from '../ui/Img.astro';
+import Knop from '../ui/Knop.astro';
+import type { PaginaBlokkenHero } from '../../../tina/__generated__/types';
+import type { Settings } from '../../lib/data';
+
+interface Props {
+  data: PaginaBlokkenHero;
+  settings?: Settings | null;
+}
+const { data: d, settings } = Astro.props;
+const pos = d.fotoPositie ? `object-position:${d.fotoPositie}` : undefined;
+---
+<section class="wrap hero" data-tina-field={tinaField(d)}>
+  <div class="hero-photo">
+    <span class="back" aria-hidden="true"></span>
+    <Img class="arch" src={d.foto} alt={d.fotoAlt} style={pos} eager priority widths={[448, 672, 900, 1200]} sizes="(min-width: 861px) 45vw, 224px" field={tinaField(d, 'foto')} />
+    <Img class="stem" src="/img/stokroos-taupe.png" decorative widths={[76]} sizes="38px" />
+    <Img class="badge" src={d.badge} decorative eager widths={[124, 240]} sizes="(min-width: 861px) 120px, 62px" field={tinaField(d, 'badge')} />
+  </div>
+  <div class="hero-txt center">
+    {d.eyebrow && <span class="eb c" data-tina-field={tinaField(d, 'eyebrow')}>{d.eyebrow}</span>}
+    <h1 data-tina-field={tinaField(d, 'titel')}>{d.titel}</h1>
+    {d.tekst && <p class="lead" data-tina-field={tinaField(d, 'tekst')}>{d.tekst}</p>}
+    {d.knoppen?.length ? (
+      <div class="btns">{d.knoppen.map((k, i) => k && <Knop knop={k} settings={settings} field={tinaField(d, 'knoppen', i)} />)}</div>
+    ) : null}
+    {d.usps?.length ? (
+      <div class="avail">{d.usps.map((u, i) => <span data-tina-field={tinaField(d, 'usps', i)}>{u}</span>)}</div>
+    ) : null}
+  </div>
+</section>

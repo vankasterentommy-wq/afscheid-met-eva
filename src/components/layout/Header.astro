@@ -1,0 +1,36 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import Icon from '../ui/Icon.astro';
+import { isActive, safeUrl, telHref, waHref } from '../../lib/util';
+import type { Settings } from '../../lib/data';
+
+interface Props {
+  settings?: Settings | null;
+  path: string;
+}
+const { settings: s, path } = Astro.props;
+const k = s?.knoppen;
+---
+<div class="wrap">
+  <a href="/" class="logo" aria-label="Afscheid met Eva – naar home"><img src="/img/logo2-bordeaux.png" alt="Afscheid met Eva" width="640" height="233" /></a>
+  <div class="barr">
+    <a href={telHref(s)} class="iconbtn call" aria-label={`Bel Eva: ${s?.contact?.telefoon ?? ''}`}><Icon name="phone" /></a>
+    <button class="iconbtn burger" aria-label="Menu openen" aria-expanded="false" aria-controls="menu"><Icon name="menu" /></button>
+  </div>
+  <nav class="main" id="menu" aria-label="Hoofdmenu">
+    {s?.menu?.map((m, i) => m && (
+      <a
+        href={safeUrl(m.link) || '/'}
+        class:list={['nl', { on: isActive(m.link, path) }]}
+        aria-current={isActive(m.link, path) ? 'page' : undefined}
+        data-tina-field={tinaField(s, 'menu', i)}
+      >{m.tekst}</a>
+    ))}
+    <a href={telHref(s)} class="btn btn-p" data-tina-field={k ? tinaField(k, 'bel247') : undefined}><Icon name="phone" />{k?.bel247}</a>
+    <div class="menu-extra">
+      <a href={telHref(s)} class="btn btn-p"><Icon name="phone" />{k?.belMet} {s?.contact?.telefoon}</a>
+      <a href={waHref(s)} class="btn btn-s" data-tina-field={k ? tinaField(k, 'whatsapp') : undefined}><Icon name="chat" />{k?.whatsapp}</a>
+      <small>{s?.contact?.bereikbaar}</small>
+    </div>
+  </nav>
+</div>

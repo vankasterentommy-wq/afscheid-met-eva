@@ -1,0 +1,38 @@
+---
+import { tinaField } from '@tinacms/astro/tina-field';
+import TekstKaart from '../ui/TekstKaart.astro';
+import { bgClass } from '../../lib/util';
+import type { PaginaBlokkenTarieven, PaginaBlokkenChecklistKaarten } from '../../../tina/__generated__/types';
+
+interface Props {
+  data: PaginaBlokkenTarieven;
+}
+const { data: d } = Astro.props;
+const pakketten = (d.pakketten ?? []).filter((p): p is NonNullable<typeof p> => !!p);
+// De middelste wordt uitgelicht (bij een oneven aantal).
+const mid = pakketten.length % 2 === 1 && pakketten.length > 1 ? (pakketten.length - 1) / 2 : -1;
+---
+<section class={bgClass(d.achtergrond)} data-tina-field={tinaField(d)}>
+  <div class="wrap sec stack" style="gap:28px">
+    <div class="stack" style="gap:8px;max-width:760px">
+      {d.eyebrow && <span class="eb" data-tina-field={tinaField(d, 'eyebrow')}>{d.eyebrow}</span>}
+      {d.titel && <h2 data-tina-field={tinaField(d, 'titel')}>{d.titel}</h2>}
+      {d.intro && <p style="color:var(--text)" data-tina-field={tinaField(d, 'intro')}>{d.intro}</p>}
+    </div>
+    {pakketten.length > 0 && (
+      <div class="pkgs">
+        {pakketten.map((p, i) => (
+          <div class:list={['pkg', { mid: i === mid }]} data-tina-field={tinaField(p)}>
+            <span class="sub" data-tina-field={tinaField(p, 'naam')}>{p.naam}</span>
+            <b data-tina-field={tinaField(p, 'prijs')}>{p.prijs}</b>
+            <p data-tina-field={tinaField(p, 'tekst')}>{p.tekst}</p>
+          </div>
+        ))}
+      </div>
+    )}
+    {d.noot && <p class="muted" style="max-width:760px" data-tina-field={tinaField(d, 'noot')}>{d.noot}</p>}
+    {d.kaarten?.length ? (
+      <div class="kgrid">{d.kaarten.map((k) => k && <TekstKaart data={k as unknown as PaginaBlokkenChecklistKaarten} />)}</div>
+    ) : null}
+  </div>
+</section>
