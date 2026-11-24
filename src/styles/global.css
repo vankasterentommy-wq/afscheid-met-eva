@@ -168,6 +168,7 @@ details p{color:var(--text);padding:0 0 18px;font-size:16px}
 .trio{display:flex;flex-direction:column;gap:12px}
 .trio>div{border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:10px}
 .trio .q{font-family:var(--display);font-size:19px;color:var(--bordeaux);line-height:1.45}
+.review p.lang,.trio .q.lang{font-family:var(--body);font-size:17px;line-height:1.75;color:var(--text)}
 
 /* contact */
 .clist{background:var(--white);border-radius:20px;padding:4px 18px}
@@ -315,6 +316,7 @@ nav.main>.btn{display:inline-flex;margin-left:14px;min-height:48px;padding:0 22p
 .split .media img.arch{height:580px}
 .quoteband q{font-size:34px}
 .review p{font-size:28px}
+.review p.lang{font-size:19px;max-width:720px}
 .phead .wrap{padding-top:72px;padding-bottom:64px}
 .phead .deco{display:block;position:absolute;right:6%;bottom:-40px;width:150px;opacity:.3}
 .hide-m{display:block!important}

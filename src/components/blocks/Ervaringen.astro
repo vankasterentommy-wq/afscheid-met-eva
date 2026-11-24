@@ -9,13 +9,15 @@ const { data: d } = Astro.props;
 const items = (d.ervaringen ?? []).filter((e): e is NonNullable<typeof e> => !!e);
 const info = d.infokaart && (d.infokaart.titel || d.infokaart.tekst) ? d.infokaart : null;
 const enkel = !info && items.length === 1;
+/** Lange ervaringen in het leeslettertype (de sierletter is voor korte citaten). */
+const lang = (t?: string | null) => (t ?? '').length > 200;
 ---
 <section data-tina-field={tinaField(d)}>
   <div class="wrap sec">
     {enkel ? (
       <div class="review" data-tina-field={tinaField(items[0])}>
         {items[0].label && <span class="eb c" data-tina-field={tinaField(items[0], 'label')}>{items[0].label}</span>}
-        <p data-tina-field={tinaField(items[0], 'citaat')}>"{items[0].citaat}"</p>
+        <p class:list={{ lang: lang(items[0].citaat) }} data-tina-field={tinaField(items[0], 'citaat')}>"{items[0].citaat}"</p>
         {items[0].naam && <span class="muted" style="font-size:15px" data-tina-field={tinaField(items[0], 'naam')}>{items[0].naam}</span>}
       </div>
     ) : (
@@ -30,7 +32,7 @@ const enkel = !info && items.length === 1;
         {items.map((e) => (
           <div class="white" data-tina-field={tinaField(e)}>
             {e.label && <span class="eb" data-tina-field={tinaField(e, 'label')}>{e.label}</span>}
-            <p class="q" data-tina-field={tinaField(e, 'citaat')}>"{e.citaat}"</p>
+            <p class:list={['q', { lang: lang(e.citaat) }]} data-tina-field={tinaField(e, 'citaat')}>"{e.citaat}"</p>
             {e.naam && <span class="muted" style="font-size:15px" data-tina-field={tinaField(e, 'naam')}>{e.naam}</span>}
           </div>
         ))}
