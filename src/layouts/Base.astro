@@ -10,6 +10,8 @@ import TinaIsland from '@tinacms/astro/TinaIsland.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import Mbar from '../components/layout/Mbar.astro';
+import Consent from '../components/layout/Consent.astro';
+import { trackingAan } from '../lib/tracking';
 import { getSettings } from '../lib/data';
 import { islands } from '../lib/islands';
 
@@ -110,12 +112,14 @@ const jsonLd = {
     <slot />
 
     <TinaIsland name="footer" wrapper={islands.footer.wrapper}>
-      <Footer settings={s} />
+      <Footer settings={s} cookies={trackingAan} />
     </TinaIsland>
 
     <TinaIsland name="mbar" wrapper={islands.mbar.wrapper}>
       <Mbar settings={s} />
     </TinaIsland>
+
+    {trackingAan && <Consent settings={s} />}
 
     <script>
       // Mobiel menu (event delegation, zodat het ook werkt na een verversing in Tina)

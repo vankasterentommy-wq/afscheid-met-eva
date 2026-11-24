@@ -468,6 +468,19 @@ export default defineConfig({
           },
           {
             type: 'object',
+            name: 'cookies',
+            label: 'Cookiemelding',
+            description: 'Verschijnt alleen als Google Analytics/Ads is ingesteld (door Tommy, bij Netlify).',
+            fields: [
+              area('tekst', 'Tekst van de melding'),
+              txt('akkoord', 'Knop accepteren'),
+              txt('weigeren', 'Knop weigeren'),
+              txt('meerInfo', 'Linktekst naar de privacyverklaring'),
+              txt('instellingen', 'Linktekst in de footer om de keuze te wijzigen'),
+            ],
+          },
+          {
+            type: 'object',
             name: 'menu',
             label: 'Menu',
             list: true,

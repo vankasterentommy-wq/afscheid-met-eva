@@ -7,8 +7,10 @@ import type { Settings } from '../../lib/data';
 
 interface Props {
   settings?: Settings | null;
+  /** Toon de link "Cookie-instellingen" (alleen als Google-tracking is ingesteld). */
+  cookies?: boolean;
 }
-const { settings: s } = Astro.props;
+const { settings: s, cookies = false } = Astro.props;
 const c = s?.contact;
 const f = s?.footer;
 const cb = s?.callband;
@@ -50,6 +52,6 @@ const cb = s?.callband;
   <div class="legal">
     <span>{f?.copyright}</span>
     <span>KvK {s?.bedrijf?.kvk} · btw {s?.bedrijf?.btw}</span>
-    <span><a href="/privacy">{f?.privacy}</a> · <a href="/voorwaarden">{f?.voorwaarden}</a></span>
+    <span><a href="/privacy">{f?.privacy}</a> · <a href="/voorwaarden">{f?.voorwaarden}</a>{cookies && <> · <a href="/privacy" data-consent-open>{s?.cookies?.instellingen}</a></>}</span>
   </div>
 </div>

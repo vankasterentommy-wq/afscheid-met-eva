@@ -13,6 +13,13 @@
     "kvk": "42209713",
     "btw": "NL005586504B32"
   },
+  "cookies": {
+    "tekst": "Mag deze website cookies van Google gebruiken? Daarmee zie ik hoe de site wordt gebruikt en hoe mensen hem vinden. Je keuze kun je altijd wijzigen onderaan de pagina.",
+    "akkoord": "Akkoord",
+    "weigeren": "Liever niet",
+    "meerInfo": "Meer in de privacyverklaring",
+    "instellingen": "Cookie-instellingen"
+  },
   "menu": [
     { "tekst": "Overlijden melden", "link": "/overlijden-melden" },
     { "tekst": "Uitvaart regelen", "link": "/uitvaart-regelen" },

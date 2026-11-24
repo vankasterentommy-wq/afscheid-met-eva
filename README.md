@@ -50,6 +50,25 @@ Elke opslag in Tina maakt een commit, waarna Netlify automatisch een nieuwe buil
 3. **Dispatcher**: voeg in `Blocks.astro` een `case 'PaginaBlokkenVideo'` toe.
 4. CSS in `global.css` (mobile-first, desktop in `@media (min-width: 861px)`).
 
+## Google Analytics / Google Ads (staat uit tot er een ID is)
+
+Er wordt niets van Google geladen en er verschijnt geen cookiemelding zolang deze environment variables bij Netlify leeg zijn. Na het invullen moet je opnieuw deployen (*Deploys → Trigger deploy*).
+
+| Variable | Voorbeeld | Waarvoor |
+|---|---|---|
+| `PUBLIC_GA4_ID` | `G-XXXXXXXXXX` | Google Analytics 4 |
+| `PUBLIC_GOOGLE_ADS_ID` | `AW-123456789` | Google Ads |
+| `PUBLIC_ADS_LABEL_BEL` | `AbC-dEfGhI` | conversie: klik op een belknop (`tel:`) |
+| `PUBLIC_ADS_LABEL_WHATSAPP` | | conversie: klik op een WhatsApp-link |
+| `PUBLIC_ADS_LABEL_FORMULIER` | | conversie: bezoek aan `/bedankt` na het formulier |
+
+- **Consent Mode v2, "basic":** de Google-tag laadt pas nadat iemand op *Akkoord* klikt. Kiest iemand *Liever niet*, dan wordt er niets geladen. Intrekken via *Cookie-instellingen* in de footer verwijdert de `_ga`/`_gcl`-cookies.
+- De keuze wordt 12 maanden onthouden (localStorage). Daarna vraagt de site opnieuw.
+- GA4-events: `bel_klik`, `whatsapp_klik`, `formulier_verstuurd`.
+- Eva past de teksten van de melding aan in Tina (*Instellingen → Cookiemelding*). De ID's staan bewust niet in Tina.
+- **Privacyverklaring:** zodra dit aanstaat, moet de verklaring een cookieparagraaf hebben (Google Analytics/Ads, doel, bewaartermijn, doorgifte naar de VS, intrekken van toestemming).
+- Code: `src/lib/tracking.ts`, `src/components/layout/Consent.astro`. Test: `scripts/consent-test.mjs`.
+
 ## Controles (fase 4)
 
 ```bash

@@ -1,0 +1,130 @@
+---
+/**
+ * Cookiemelding + Google-tag (GA4 / Google Ads) met Consent Mode v2, "basic"-variant:
+ * er wordt NIETS van Google geladen tot de bezoeker op "Akkoord" klikt.
+ * Conversies: klik op tel:-link, klik op WhatsApp-link, en het bekijken van /bedankt.
+ * Wordt alleen gerenderd als er een Google-ID is ingesteld (zie src/lib/tracking.ts).
+ */
+import { tinaField } from '@tinacms/astro/tina-field';
+import { tracking } from '../../lib/tracking';
+import type { Settings } from '../../lib/data';
+
+interface Props {
+  settings?: Settings | null;
+}
+const { settings: s } = Astro.props;
+const c = s?.cookies;
+---
+<div
+  class="consent"
+  id="consent"
+  role="dialog"
+  aria-live="polite"
+  aria-label="Cookiemelding"
+  hidden
+  data-ga4={tracking.ga4}
+  data-ads={tracking.ads}
+  data-label-bel={tracking.labels.bel}
+  data-label-whatsapp={tracking.labels.whatsapp}
+  data-label-formulier={tracking.labels.formulier}
+>
+  <p data-tina-field={c ? tinaField(c, 'tekst') : undefined}>
+    {c?.tekst} <a href="/privacy" data-tina-field={c ? tinaField(c, 'meerInfo') : undefined}>{c?.meerInfo}</a>
+  </p>
+  <div class="consent-knoppen">
+    <button type="button" class="btn btn-p" data-consent="ja">{c?.akkoord}</button>
+    <button type="button" class="btn btn-s" data-consent="nee">{c?.weigeren}</button>
+  </div>
+</div>
+
+<script>
+  const KEY = 'eva-cookiekeuze';
+  const MAX_DAGEN = 365;
+  const box = document.getElementById('consent') as HTMLElement | null;
+
+  type W = Window & { dataLayer?: unknown[]; gtag?: (...a: unknown[]) => void };
+  const w = window as W;
+
+  const leesKeuze = (): 'ja' | 'nee' | null => {
+    try {
+      const v = JSON.parse(localStorage.getItem(KEY) ?? 'null') as { k: 'ja' | 'nee'; t: number } | null;
+      if (!v || Date.now() - v.t > MAX_DAGEN * 864e5) return null;
+      return v.k;
+    } catch {
+      return null;
+    }
+  };
+  const bewaarKeuze = (k: 'ja' | 'nee') => {
+    try { localStorage.setItem(KEY, JSON.stringify({ k, t: Date.now() })); } catch { /* privémodus */ }
+  };
+
+  let geladen = false;
+  const laadGoogle = () => {
+    if (geladen || !box) return;
+    const { ga4, ads, labelBel, labelWhatsapp, labelFormulier } = box.dataset;
+    const eersteId = ga4 || ads;
+    if (!eersteId) return;
+    geladen = true;
+    w.dataLayer = w.dataLayer || [];
+    // gtag moet het arguments-object doorgeven (zo werkt de Google-tag)
+    w.gtag = function () { w.dataLayer!.push(arguments); }; // eslint-disable-line prefer-rest-params
+    const gtag = w.gtag;
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+    gtag('consent', 'update', { ad_storage: 'granted', analytics_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' });
+    gtag('js', new Date());
+    if (ga4) gtag('config', ga4);
+    if (ads) gtag('config', ads);
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(eersteId)}`;
+    document.head.appendChild(s);
+
+    const meld = (event: string, label?: string) => {
+      if (ga4) gtag('event', event);
+      if (ads && label) gtag('event', 'conversion', { send_to: `${ads}/${label}` });
+    };
+    document.addEventListener('click', (e) => {
+      const a = (e.target as Element | null)?.closest('a[href]') as HTMLAnchorElement | null;
+      if (!a) return;
+      if (a.href.startsWith('tel:')) meld('bel_klik', labelBel);
+      else if (a.hostname === 'wa.me') meld('whatsapp_klik', labelWhatsapp);
+    });
+    if (location.pathname.replace(/\/$/, '') === '/bedankt') meld('formulier_verstuurd', labelFormulier);
+  };
+
+  const toon = (aan: boolean) => {
+    if (!box) return;
+    box.hidden = !aan;
+    document.body.classList.toggle('consent-open', aan);
+  };
+
+  const keuze = leesKeuze();
+  if (keuze === 'ja') laadGoogle();
+  else if (keuze === null) toon(true);
+
+  document.addEventListener('click', (e) => {
+    const t = e.target as Element | null;
+    const knop = t?.closest('[data-consent]') as HTMLElement | null;
+    if (knop) {
+      const k = knop.dataset.consent === 'ja' ? 'ja' : 'nee';
+      const wasJa = leesKeuze() === 'ja';
+      bewaarKeuze(k);
+      toon(false);
+      if (k === 'ja') laadGoogle();
+      // Intrekken: Google-cookies (_ga, _gid, _gcl…) verwijderen en herladen zonder Google
+      else if (wasJa) {
+        const host = location.hostname;
+        const domeinen = ['', host, `.${host}`, `.${host.split('.').slice(-2).join('.')}`];
+        document.cookie.split(';').map((c) => c.split('=')[0].trim()).filter((n) => /^(_ga|_gid|_gat|_gcl)/.test(n)).forEach((n) => {
+          domeinen.forEach((d) => { document.cookie = `${n}=; Max-Age=0; path=/${d ? `; domain=${d}` : ''}`; });
+        });
+        location.reload();
+      }
+      return;
+    }
+    if (t?.closest('[data-consent-open]')) {
+      e.preventDefault();
+      toon(true);
+    }
+  });
+</script>

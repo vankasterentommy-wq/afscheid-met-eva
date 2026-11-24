@@ -8,6 +8,7 @@ import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import Mbar from '../components/layout/Mbar.astro';
 import { getPage, getSettings, type PageResult, type SettingsResult } from './data';
+import { trackingAan } from './tracking';
 
 const settingsOf = (d: unknown) => (d as SettingsResult | undefined)?.data?.instellingen ?? null;
 
@@ -34,7 +35,7 @@ export const islands: IslandRegistry = {
     fetch: () => getSettings(),
     component: Footer,
     wrapper: { tag: 'footer' },
-    propsFromData: (d) => ({ settings: settingsOf(d) }),
+    propsFromData: (d) => ({ settings: settingsOf(d), cookies: trackingAan }),
   },
   mbar: {
     fetch: () => getSettings(),

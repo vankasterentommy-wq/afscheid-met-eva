@@ -406,3 +406,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,t
 details p a{display:inline-block;padding:11px 0;margin:-11px 0}
 /* Mobiel: hero-knop "Bel Eva – dag en nacht" valt op 390×844 boven de vaste belbalk */
 @media (max-width: 860px){.hero{padding-top:6px}.hero-txt{padding-top:4px}}
+/* Cookiemelding (alleen zichtbaar als Google-tracking is ingesteld) */
+.consent{position:fixed;z-index:46;left:12px;right:12px;bottom:calc(84px + env(safe-area-inset-bottom));background:var(--ivoor);color:var(--ink);border:1px solid var(--line);border-radius:20px;box-shadow:0 10px 30px rgba(101,53,72,.16);padding:18px 18px 16px;display:flex;flex-direction:column;gap:14px;font-size:15px;line-height:1.5}
+.consent[hidden]{display:none}
+.consent p{color:var(--text)}
+.consent-knoppen{display:flex;gap:10px}
+.consent-knoppen .btn{flex:1 1 0;min-height:48px;padding:0 12px;font-size:16px}
+body.menu-open .consent{display:none}
+@media (min-width: 861px){.consent{left:auto;right:24px;bottom:24px;max-width:420px;padding:22px 22px 20px}}
