@@ -14,9 +14,30 @@
     {
       "_template": "kaarten",
       "kaarten": [
-        { "foto": "/img/tafel-warm.jpg", "fotoAlt": "Keukentafel met thee en wilde bloemen", "fotoPositie": "40% 70%", "titel": "Wensen bespreken", "subtitel": "In alle rust", "tekst": "Wat vind je belangrijk bij jouw afscheid? Samen nemen we rustig de tijd om wensen en ideeën te bespreken. Wat voor afscheid past bij jou? Wat wil je graag vastleggen en wat laat je liever over aan jouw nabestaanden? Alles is bespreekbaar. Ook de kosten." },
-        { "foto": "/img/bloemen-warm.jpg", "fotoAlt": "Boeket met witte rozen en kamille", "fotoPositie": "55% 55%", "titel": "Een rouwkaart maken", "subtitel": "Dat kan ook al vooraf", "tekst": "Een rouwkaart is vaak het eerste wat anderen zien en lezen over het afscheid. Samen kunnen we alvast nadenken over de tekst, het ontwerp, de foto's en de uitstraling. Geheel vrijblijvend en kosteloos maak ik bij jullie thuis alvast een ontwerp. Zo ontstaat er een kaart die helemaal bij jullie past, zonder de tijdsdruk die er na een overlijden vaak is." },
-        { "foto": "/img/roos-tak.jpg", "fotoAlt": "Tak van een stokroos met knoppen", "fotoPositie": "50% 35%", "titel": "Een wensenboekje", "subtitel": "Jouw wensen, alvast op papier.", "tekst": "Je kunt bij mij kosteloos een wensenboekje aanvragen. Hierin kun je rustig nadenken over wat bij jou past en wat voor jou belangrijk is. Vind je het prettig om dit samen te doen? Dan neem ik daar natuurlijk graag de tijd voor." }
+        {
+          "foto": "/img/tafel-warm.jpg",
+          "fotoAlt": "Keukentafel met thee en wilde bloemen",
+          "fotoPositie": "40% 70%",
+          "titel": "Wensen bespreken",
+          "subtitel": "In alle rust",
+          "tekst": "Wat vind je belangrijk bij jouw afscheid? Samen nemen we rustig de tijd om wensen en ideeën te bespreken. Wat voor afscheid past bij jou? Wat wil je graag vastleggen en wat laat je liever over aan jouw nabestaanden? Alles is bespreekbaar. Ook de kosten."
+        },
+        {
+          "foto": "/img/bloemen-warm.jpg",
+          "fotoAlt": "Boeket met witte rozen en kamille",
+          "fotoPositie": "55% 55%",
+          "titel": "Een rouwkaart maken",
+          "subtitel": "Dat kan ook al vooraf",
+          "tekst": "Een rouwkaart is vaak het eerste wat anderen zien en lezen over het afscheid. Samen kunnen we alvast nadenken over de tekst, het ontwerp, de foto's en de uitstraling. Geheel vrijblijvend en kosteloos maak ik bij jullie thuis alvast een ontwerp. Zo ontstaat er een kaart die helemaal bij jullie past, zonder de tijdsdruk die er na een overlijden vaak is."
+        },
+        {
+          "foto": "/img/roos-tak.jpg",
+          "fotoAlt": "Tak van een stokroos met knoppen",
+          "fotoPositie": "50% 35%",
+          "titel": "Een wensenboekje",
+          "subtitel": "Jouw wensen, alvast op papier.",
+          "tekst": "Je kunt bij mij kosteloos een wensenboekje aanvragen. Hierin kun je rustig nadenken over wat bij jou past en wat voor jou belangrijk is. Vind je het prettig om dit samen te doen? Dan neem ik daar natuurlijk graag de tijd voor."
+        }
       ]
     },
     {
@@ -28,12 +49,29 @@
       "fotoPositie": "50% 25%",
       "eyebrow": "Vrijblijvend kennismaken",
       "titel": "Voordelen van een gesprek vooraf",
-      "lijst": ["Kosteloos en vrijblijvend", "Weten wat er kan, geeft rust", "Verschillende mogelijkheden ontdekken", "Alvast een rouwkaart in beeld", "Je nabestaanden ontzorgen", "Geen tijdsdruk", "Alvast kennismaken", "Financiële duidelijkheid"],
-      "knoppen": [
-        { "tekst": "Plan een kennismaking", "soort": "link", "link": "/contact", "stijl": "primair" },
-        { "tekst": "Stuur een WhatsApp", "soort": "whatsapp", "stijl": "secundair" }
+      "lijst": [
+        "Kosteloos en vrijblijvend",
+        "Weten wat er kan, geeft rust",
+        "Verschillende mogelijkheden ontdekken",
+        "Alvast een rouwkaart in beeld",
+        "Je nabestaanden ontzorgen",
+        "Geen tijdsdruk",
+        "Alvast kennismaken",
+        "Financiële duidelijkheid"
       ],
-      "variant": "lijst2"
+      "knoppen": [
+        {
+          "tekst": "Plan een kennismaking",
+          "soort": "link",
+          "link": "/contact",
+          "stijl": "primair"
+        },
+        {
+          "tekst": "Stuur een WhatsApp",
+          "soort": "whatsapp",
+          "stijl": "secundair"
+        }
+      ]
     }
   ]
 }

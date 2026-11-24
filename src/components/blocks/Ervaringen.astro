@@ -19,7 +19,7 @@ const enkel = !info && items.length === 1;
         {items[0].naam && <span class="muted" style="font-size:15px" data-tina-field={tinaField(items[0], 'naam')}>{items[0].naam}</span>}
       </div>
     ) : (
-      <div class="trio">
+      <div class="trio" style={`--n:${Math.min(3, items.length + (info ? 1 : 0)) || 1}`}>
         {info && (
           <div class="blush" data-tina-field={tinaField(info)}>
             {info.eyebrow && <span class="eb" data-tina-field={tinaField(info, 'eyebrow')}>{info.eyebrow}</span>}

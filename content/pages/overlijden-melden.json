@@ -20,23 +20,60 @@
         "functie": "Register Uitvaartverzorger",
         "label": "Dag en nacht bereikbaar",
         "knoppen": [
-          { "tekst": "Bel direct", "soort": "bellen", "stijl": "primair" },
-          { "tekst": "WhatsApp", "soort": "whatsapp", "stijl": "secundair" }
+          {
+            "tekst": "Bel direct",
+            "soort": "bellen",
+            "stijl": "primair"
+          },
+          {
+            "tekst": "WhatsApp",
+            "soort": "whatsapp",
+            "stijl": "secundair"
+          }
         ]
       },
       "titel": "Zo gaat het verder",
       "hint": "Tik op een stap voor meer uitleg.",
       "stappen": [
-        { "titel": "Neem even de tijd", "tekst": "Er hoeft niet direct van alles geregeld te worden. Neem even rustig de tijd om bij jullie dierbare te zijn. Samenzijn met familie of vrienden kan op dit moment heel fijn zijn." },
-        { "titel": "Informeer de (huis)arts", "tekst": "Het overlijden moet officieel worden vastgesteld door een arts. De arts komt langs om het overlijden vast te stellen en maakt de benodigde documenten op.\n\nIs jullie dierbare thuis overleden? Neem dan contact op met de huisarts of, buiten kantoortijden, de huisartsenpost. Is het overlijden in een ziekenhuis of zorginstelling? Dan wordt dit meestal door de betreffende instelling geregeld.", "noot": "De officiële overlijdensakte wordt later pas door de gemeente opgemaakt." },
-        { "titel": "Bel mij, dag en nacht", "tekst": "Zodra jullie mij bellen, bespreken we samen wat er op dat moment nodig is. Mijn zorgteam komt vervolgens naar de plaats van overlijden om jullie dierbare met zorg en aandacht over te brengen naar een plek die voor jullie goed voelt. Dit kan ieder uitvaartcentrum naar keuze zijn, maar ook jullie eigen huis. Wanneer de omstandigheden dit toelaten en de woning hiervoor geschikt is, kunnen jullie kiezen voor een thuisopbaring.\n\nNadat mijn zorgteam bij jullie is geweest, kom ik persoonlijk langs om de wensen voor het afscheid te bespreken." },
-        { "titel": "Uitvaart regelen", "tekst": "Ik kom bij jullie thuis langs om in alle rust de wensen voor het afscheid te bespreken. Samen kijken we stap voor stap naar wat voor jullie belangrijk is: van de keuze voor begraven of cremeren en de locatie van het afscheid tot de invulling van de dienst, bloemen, rouwkaart en andere persoonlijke wensen.\n\nVoor jullie moet er tijd zijn om samen te zijn, herinneringen te delen en bewust toe te leven naar het afscheid. Daarom neem ik de praktische organisatie zoveel mogelijk uit handen. Ik regel alle formaliteiten, maak reserveringen en stem alles af met de betrokken partijen." },
-        { "titel": "Kostenopgave", "tekst": "Zo snel mogelijk, maar in ieder geval binnen 24 uur, geef ik jullie inzicht in de kosten van de uitvaart. Jullie ontvangen een duidelijke en transparante kostenopgave, waarin alle onderdelen afzonderlijk zijn opgenomen. Zo weten jullie precies waar jullie aan toe zijn en komen jullie niet voor verrassingen te staan." },
-        { "titel": "Dag van de uitvaart", "tekst": "Ook in de dagen voorafgaand aan de uitvaart blijf ik jullie vaste aanspreekpunt. Ik houd overzicht, denk vooruit en zorg dat alle details op elkaar zijn afgestemd. Zo kunnen jullie je richten op elkaar en op het naderende afscheid.\n\nOp de dag van de uitvaart komen we op een afgesproken plek samen. Vanaf dat moment begeleid ik jullie stap voor stap. Met rust, aandacht en oog voor ieder detail zorgen we samen voor een mooi, passend en persoonlijk afscheid waar jullie later met een goed gevoel op terug kunnen kijken." }
+        {
+          "titel": "Neem even de tijd",
+          "tekst": "Er hoeft niet direct van alles geregeld te worden. Neem even rustig de tijd om bij jullie dierbare te zijn. Samenzijn met familie of vrienden kan op dit moment heel fijn zijn."
+        },
+        {
+          "titel": "Informeer de (huis)arts",
+          "tekst": "Het overlijden moet officieel worden vastgesteld door een arts. De arts komt langs om het overlijden vast te stellen en maakt de benodigde documenten op.\n\nIs jullie dierbare thuis overleden? Neem dan contact op met de huisarts of, buiten kantoortijden, de huisartsenpost. Is het overlijden in een ziekenhuis of zorginstelling? Dan wordt dit meestal door de betreffende instelling geregeld.",
+          "noot": "De officiële overlijdensakte wordt later pas door de gemeente opgemaakt."
+        },
+        {
+          "titel": "Bel mij, dag en nacht",
+          "tekst": "Zodra jullie mij bellen, bespreken we samen wat er op dat moment nodig is. Mijn zorgteam komt vervolgens naar de plaats van overlijden om jullie dierbare met zorg en aandacht over te brengen naar een plek die voor jullie goed voelt. Dit kan ieder uitvaartcentrum naar keuze zijn, maar ook jullie eigen huis. Wanneer de omstandigheden dit toelaten en de woning hiervoor geschikt is, kunnen jullie kiezen voor een thuisopbaring."
+        },
+        {
+          "titel": "Uitvaart regelen",
+          "tekst": "Ik kom bij jullie thuis langs om in alle rust de wensen voor het afscheid te bespreken. Samen kijken we stap voor stap naar wat voor jullie belangrijk is: van de keuze voor begraven of cremeren en de locatie van het afscheid tot de invulling van de dienst, bloemen, rouwkaart en andere persoonlijke wensen.\n\nVoor jullie moet er tijd zijn om samen te zijn, herinneringen te delen en bewust toe te leven naar het afscheid. Daarom neem ik de praktische organisatie zoveel mogelijk uit handen. Ik regel alle formaliteiten, maak reserveringen en stem alles af met de betrokken partijen."
+        },
+        {
+          "titel": "Kostenopgave",
+          "tekst": "Zo snel mogelijk, maar in ieder geval binnen 24 uur na ons gesprek, geef ik jullie inzicht in de kosten van de uitvaart. Jullie ontvangen een duidelijke en transparante kostenopgave, waarin alle onderdelen afzonderlijk zijn opgenomen. Zo weten jullie precies waar jullie aan toe zijn en komen jullie niet voor verrassingen te staan."
+        },
+        {
+          "titel": "Één vast gezicht",
+          "tekst": "In de dagen voorafgaand aan de uitvaart blijf ik jullie vaste aanspreekpunt. Ik houd overzicht, denk vooruit en zorg dat alle details op elkaar zijn afgestemd. Zo kunnen jullie je richten op elkaar en op het naderende afscheid."
+        },
+        {
+          "titel": "Dag van de uitvaart",
+          "tekst": "Op de dag van de uitvaart komen we op een afgesproken plek samen. Vanaf dat moment begeleid ik jullie stap voor stap. Met rust, aandacht en oog voor ieder detail zorgen we samen voor een mooi, passend en persoonlijk afscheid waar jullie later met een goed gevoel op terug kunnen kijken."
+        }
       ],
       "checklist": {
         "titel": "Handig om klaar te leggen",
-        "lijst": ["Identiteitsbewijs van jullie dierbare", "Uitvaartverzekeringspolis, indien aanwezig", "Uitvaartwensen of codicil, indien vastgelegd", "Adressenlijst van familie en vrienden", "Kleding voor jullie dierbare"],
+        "lijst": [
+          "Identiteitsbewijs van jullie dierbare",
+          "Uitvaartverzekeringspolis, indien aanwezig",
+          "Uitvaartwensen of codicil, indien vastgelegd",
+          "Adressenlijst van familie en vrienden",
+          "Kleding voor jullie dierbare"
+        ],
         "noot": "Niet alles direct bij de hand? Geen zorgen, dat mag ook later."
       },
       "foto": "/img/roos-zonsondergang.jpg",
@@ -49,14 +86,40 @@
       "eyebrow": "Veelgestelde vragen",
       "titel": "Wat je misschien wilt weten",
       "vragen": [
-        { "vraag": "Hoe snel moet de uitvaart plaatsvinden?", "antwoord": "In Nederland mag een uitvaart niet eerder plaatsvinden dan 36 uur na het overlijden en moet deze in principe uiterlijk op de zesde werkdag na het overlijden plaatsvinden. In bijzondere omstandigheden kan hiervan worden afgeweken met toestemming van de burgemeester." },
-        { "vraag": "Kan ik jou inschakelen als mijn dierbare ergens anders verzekerd is?", "antwoord": "Ja, absoluut. Je bent niet gebonden aan een uitvaartverzorger die door de verzekeringsmaatschappij wordt aangeboden. Ik bespreek graag met jullie wat de mogelijkheden en eventuele financiële gevolgen zijn." },
-        { "vraag": "Kan mijn dierbare thuis blijven?", "antwoord": "Ja, dat is vaak mogelijk. Als de omstandigheden en de woning het toelaten, kunnen jullie ervoor kiezen om jullie dierbare thuis op te baren.\n\nEen thuisopbaring kan plaatsvinden op een eigen bed, in een gekozen kist, op een opbaarplank of op een speciaal opbaarbed. Voor het opbaren kan gebruik worden gemaakt van een koeling of een lichte balseming (thanatopraxie).\n\nBij een lichte balseming wordt het lichaam van binnenuit tijdelijk geconserveerd. Hierdoor wordt het ontbindingsproces vertraagd en is koeling in veel gevallen niet meer nodig. Een thanatopraxiebehandeling kan niet thuis worden uitgevoerd, maar vindt plaats in een speciaal daarvoor ingerichte en gekeurde verzorgingsruimte. Daarna wordt jullie dierbare weer naar huis gebracht." },
-        { "vraag": "Moet ik direct beslissen over de invulling van de uitvaart?", "antwoord": "Nee, zeker niet. We nemen de tijd om samen de mogelijkheden te bespreken. Sommige keuzes moeten op korte termijn worden gemaakt, maar er is ruimte om stap voor stap te ontdekken wat bij jullie en jullie dierbare past." },
-        { "vraag": "Kan ik zelf bepalen waar de uitvaart plaatsvindt?", "antwoord": "Jazeker, ik werk onafhankelijk en heb geen vaste afspraken met locaties. Dit zorgt ervoor dat jullie volledig vrij zijn in de keuze voor de locatie van het afscheid.\n\nAfhankelijk van het aantal genodigden en jullie budget kan gekozen worden voor een traditionele afscheidslocatie, zoals een kerk, crematorium of uitvaartcentrum, maar ook voor een meer persoonlijke of bijzondere locatie. Denk hierbij aan een horecagelegenheid, een buitenlocatie, een vertrouwde plek of een afscheid in de eigen woning of tuin." },
-        { "vraag": "Moet ik verzekerd zijn om jou in te schakelen?", "antwoord": "Nee, je kunt mij inschakelen ongeacht of je wel of niet verzekerd bent. Ook als je een uitvaartverzekering hebt, ben je vrij om zelf een uitvaartverzorger te kiezen. Ik kan jullie ook helpen met de afhandeling bij de verzekeringsmaatschappij." },
-        { "vraag": "Ben je ook 's nachts en in het weekend bereikbaar?", "antwoord": "Ja, ik ben dag en nacht bereikbaar, ook in het weekend en op feestdagen. Je kunt mij altijd bellen of appen wanneer je mijn hulp nodig hebt." },
-        { "vraag": "Kan ik ook voorafgaand aan een overlijden contact met je opnemen?", "antwoord": "Graag zelfs! Ook vóór overlijden kunnen jullie bij mij terecht om uitvaartwensen te bespreken, een rouwkaart te maken of alvast praktische zaken te regelen. Door vooraf in gesprek te gaan, kunnen belangrijke keuzes in alle rust worden gemaakt. Weten wat er kan, geeft rust.", "linkTekst": "Lees meer over vóór overlijden", "linkUrl": "/voor-overlijden" }
+        {
+          "vraag": "Hoe snel moet de uitvaart plaatsvinden?",
+          "antwoord": "In Nederland mag een uitvaart niet eerder plaatsvinden dan 36 uur na het overlijden en moet deze in principe uiterlijk op de zesde werkdag na het overlijden plaatsvinden. In bijzondere omstandigheden kan hiervan worden afgeweken met toestemming van de burgemeester."
+        },
+        {
+          "vraag": "Kan ik jou inschakelen als mijn dierbare ergens anders verzekerd is?",
+          "antwoord": "Ja, absoluut. Je bent niet gebonden aan een uitvaartverzorger die door de verzekeringsmaatschappij wordt aangeboden. Ik bespreek graag met jullie wat de mogelijkheden en eventuele financiële gevolgen zijn."
+        },
+        {
+          "vraag": "Kan mijn dierbare thuis blijven?",
+          "antwoord": "Ja, dat is vaak mogelijk. Als de omstandigheden en de woning het toelaten, kunnen jullie ervoor kiezen om jullie dierbare thuis op te baren.\n\nEen thuisopbaring kan plaatsvinden op een eigen bed, in een gekozen kist, op een opbaarplank of op een speciaal opbaarbed. Voor het opbaren kan gebruik worden gemaakt van een koeling of een lichte balseming (thanatopraxie).\n\nBij een lichte balseming wordt het lichaam van binnenuit tijdelijk geconserveerd. Hierdoor wordt het ontbindingsproces vertraagd en is koeling in veel gevallen niet meer nodig. Een thanatopraxiebehandeling kan niet thuis worden uitgevoerd, maar vindt plaats in een speciaal daarvoor ingerichte en gekeurde verzorgingsruimte. Daarna wordt jullie dierbare weer naar huis gebracht."
+        },
+        {
+          "vraag": "Moet ik direct beslissen over de invulling van de uitvaart?",
+          "antwoord": "Nee, zeker niet. We nemen de tijd om samen de mogelijkheden te bespreken. Sommige keuzes moeten op korte termijn worden gemaakt, maar er is ruimte om stap voor stap te ontdekken wat bij jullie en jullie dierbare past."
+        },
+        {
+          "vraag": "Kan ik zelf bepalen waar de uitvaart plaatsvindt?",
+          "antwoord": "Jazeker, ik werk onafhankelijk en heb geen vaste afspraken met locaties. Dit zorgt ervoor dat jullie volledig vrij zijn in de keuze voor de locatie van het afscheid.\n\nAfhankelijk van het aantal genodigden en jullie budget kan gekozen worden voor een traditionele afscheidslocatie, zoals een kerk, crematorium of uitvaartcentrum, maar ook voor een meer persoonlijke of bijzondere locatie. Denk hierbij aan een horecagelegenheid, een buitenlocatie, een vertrouwde plek of een afscheid in de eigen woning of tuin."
+        },
+        {
+          "vraag": "Moet ik verzekerd zijn om jou in te schakelen?",
+          "antwoord": "Nee, je kunt mij inschakelen ongeacht of je wel of niet verzekerd bent. Ook als je een uitvaartverzekering hebt, ben je vrij om zelf een uitvaartverzorger te kiezen. Ik kan jullie ook helpen met de afhandeling bij de verzekeringsmaatschappij."
+        },
+        {
+          "vraag": "Ben je ook 's nachts en in het weekend bereikbaar?",
+          "antwoord": "Ja, ik ben dag en nacht bereikbaar, ook in het weekend en op feestdagen. Je kunt mij altijd bellen of appen wanneer je mijn hulp nodig hebt."
+        },
+        {
+          "vraag": "Kan ik ook voorafgaand aan een overlijden contact met je opnemen?",
+          "antwoord": "Graag zelfs! Ook vóór overlijden kunnen jullie bij mij terecht om uitvaartwensen te bespreken, een rouwkaart te maken of alvast praktische zaken te regelen. Door vooraf in gesprek te gaan, kunnen belangrijke keuzes in alle rust worden gemaakt. Weten wat er kan, geeft rust.",
+          "linkTekst": "Lees meer over vóór overlijden",
+          "linkUrl": "/voor-overlijden"
+        }
       ]
     }
   ]

@@ -10,7 +10,8 @@ interface Props {
 const { data: d } = Astro.props;
 const pakketten = (d.pakketten ?? []).filter((p): p is NonNullable<typeof p> => !!p);
 // De middelste wordt uitgelicht (bij een oneven aantal).
-const mid = pakketten.length % 2 === 1 && pakketten.length > 1 ? (pakketten.length - 1) / 2 : -1;
+// Eén pakket (één vast tarief) wordt ook uitgelicht, als losse kaart.
+const mid = pakketten.length % 2 === 1 ? (pakketten.length - 1) / 2 : -1;
 ---
 <section class={bgClass(d.achtergrond)} data-tina-field={tinaField(d)}>
   <div class="wrap sec stack" style="gap:28px">
@@ -20,7 +21,7 @@ const mid = pakketten.length % 2 === 1 && pakketten.length > 1 ? (pakketten.leng
       {d.intro && <p style="color:var(--text)" data-tina-field={tinaField(d, 'intro')}>{d.intro}</p>}
     </div>
     {pakketten.length > 0 && (
-      <div class="pkgs">
+      <div class:list={['pkgs', { een: pakketten.length === 1 }]}>
         {pakketten.map((p, i) => (
           <div class:list={['pkg', { mid: i === mid }]} data-tina-field={tinaField(p)}>
             <span class="sub" data-tina-field={tinaField(p, 'naam')}>{p.naam}</span>

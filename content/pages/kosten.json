@@ -15,17 +15,28 @@
       "achtergrond": "ivoor",
       "eyebrow": "Tarieven",
       "titel": "Mijn regeltarief",
-      "intro": "Dit is het vaste tarief voor mijn persoonlijke begeleiding, het organiseren en regelen van de uitvaart en de uitvoering op de dag zelf. De overige kosten van de uitvaart, zoals verzorging, vervoer, een kist en crematie of begrafenis, komen hier nog bij.",
+      "intro": "Dit is het vaste tarief voor mijn persoonlijke begeleiding, het organiseren en regelen van de uitvaart en de uitvoering op de dag zelf. De overige kosten van de uitvaart komen hier nog bij. Die lees je hieronder.",
       "pakketten": [
-        { "naam": "Afscheid intiem", "prijs": "€ 2.250", "tekst": "Klein afscheid, zonder afscheidsdienst, met aansluitend crematie/begraven" },
-        { "naam": "Afscheid", "prijs": "€ 2.950", "tekst": "Afscheidsdienst op uitvaartlocatie, met aansluitend crematie/begraven" },
-        { "naam": "Afscheid excellent", "prijs": "€ 3.650", "tekst": "Afscheid op een externe locatie, met aansluitend crematie/begraven" }
+        {
+          "naam": "Regeltarief",
+          "prijs": "€ 2.950",
+          "tekst": "Exclusief de kosten van derden, zoals verzorging, vervoer, kist en crematie of begrafenis."
+        }
       ],
       "noot": "Zo snel mogelijk, maar in ieder geval binnen 24 uur, geef ik jullie inzicht in de totale kosten van de uitvaart. Jullie ontvangen een duidelijke en transparante kostenopgave, waarin alle onderdelen afzonderlijk zijn opgenomen. Zo weten jullie precies waar jullie aan toe zijn.",
       "kaarten": [
         {
           "tekst": "In mijn regeltarief voor het aannemen, regelen en uitvoeren van de uitvaart zijn standaard de volgende werkzaamheden inbegrepen:",
-          "lijst": ["Het bespreken van de uitvaartwensen", "Het regelen van de wettelijke formaliteiten", "Het reserveren van locaties, benodigdheden en vervoer", "Het ontwerpen van drukwerk", "De begeleiding op de dag van de uitvaart", "Reiskosten binnen een straal van 50 kilometer", "Een vast aanspreekpunt dat dag en nacht bereikbaar is", "Contact met de verzekeringsmaatschappij en de afwikkeling hiervan"]
+          "lijst": [
+            "Het bespreken van de uitvaartwensen",
+            "Het regelen van de wettelijke formaliteiten",
+            "Het reserveren van locaties, benodigdheden en vervoer",
+            "Het ontwerpen van drukwerk",
+            "De begeleiding op de dag van de uitvaart",
+            "Reiskosten binnen een straal van 50 kilometer",
+            "Een vast aanspreekpunt dat dag en nacht bereikbaar is",
+            "Contact met de verzekeringsmaatschappij en de afwikkeling hiervan"
+          ]
         },
         {
           "label": "Aanvullende begeleiding",
@@ -45,12 +56,27 @@
       "kaarten": [
         {
           "titel": "Kosten die bij vrijwel iedere uitvaart nodig zijn",
-          "lijst": ["De laatste verzorging van jullie dierbare", "Thuisopbaring of verblijf in een uitvaartcentrum", "Het vervoer van jullie dierbare", "Een uitvaartkist, mand of ander passend alternatief", "De kosten voor crematie of begrafenis", "De aangifte van overlijden en de benodigde documenten"]
+          "lijst": [
+            "De laatste verzorging van jullie dierbare",
+            "Thuisopbaring of verblijf in een uitvaartcentrum",
+            "Het vervoer van jullie dierbare",
+            "Een uitvaartkist, mand of ander passend alternatief",
+            "De kosten voor crematie of begrafenis",
+            "De aangifte van overlijden en de benodigde documenten"
+          ]
         },
         {
           "titel": "Kosten afhankelijk van jullie wensen",
-          "lijst": ["Rouwbezoek(en)", "Rouwkaarten (digitaal of gedrukt)", "Een rouwadvertentie", "Huur van een locatie voor de afscheidsdienst", "Catering", "Bloemen", "Een opname en/of livestream", "Een fotograaf"],
-          "alsLabels": true
+          "lijst": [
+            "Rouwbezoek(en)",
+            "Rouwkaarten (digitaal of gedrukt)",
+            "Een rouwadvertentie",
+            "Huur van een locatie voor de afscheidsdienst",
+            "Catering",
+            "Bloemen",
+            "Een opname en/of livestream",
+            "Een fotograaf"
+          ]
         }
       ],
       "band": {

@@ -1,6 +1,6 @@
 ---
 import { tinaField } from '@tinacms/astro/tina-field';
-import { bgClass, paras } from '../../lib/util';
+import { bgClass, lines, paras } from '../../lib/util';
 import type { PaginaBlokkenTekst } from '../../../tina/__generated__/types';
 
 interface Props {
@@ -13,7 +13,13 @@ const { data: d } = Astro.props;
     <div class="readcol">
       {d.eyebrow && <span class="eb" data-tina-field={tinaField(d, 'eyebrow')}>{d.eyebrow}</span>}
       {d.titel && <h2 data-tina-field={tinaField(d, 'titel')}>{d.titel}</h2>}
-      {paras(d.tekst).map((p) => <p data-tina-field={tinaField(d, 'tekst')}>{p}</p>)}
+      {paras(d.tekst).map((p) =>
+        p.startsWith('## ') ? (
+          <h3 data-tina-field={tinaField(d, 'tekst')}>{p.slice(3).trim()}</h3>
+        ) : (
+          <p data-tina-field={tinaField(d, 'tekst')}>{lines(p).map((l, i) => <>{i > 0 && <br />}{l}</>)}</p>
+        ),
+      )}
     </div>
   </div>
 </section>

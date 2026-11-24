@@ -1,6 +1,7 @@
 ---
 import { tinaField } from '@tinacms/astro/tina-field';
 import Img from '../ui/Img.astro';
+import { paras } from '../../lib/util';
 import type { PaginaBlokkenPaginakop } from '../../../tina/__generated__/types';
 
 interface Props {
@@ -13,7 +14,7 @@ const { data: d } = Astro.props;
     <Img class="deco" src="/img/stokroos-bordeaux.png" decorative widths={[300]} sizes="150px" />
     {d.eyebrow && <span class="eb" data-tina-field={tinaField(d, 'eyebrow')}>{d.eyebrow}</span>}
     <h1 data-tina-field={tinaField(d, 'titel')}>{d.titel}</h1>
-    {d.intro && <p class="lead" data-tina-field={tinaField(d, 'intro')}>{d.intro}</p>}
+    {paras(d.intro).map((p) => <p class="lead" data-tina-field={tinaField(d, 'intro')}>{p}</p>)}
     {d.label && <span class="pill" data-tina-field={tinaField(d, 'label')}>{d.label}</span>}
   </div>
 </section>
