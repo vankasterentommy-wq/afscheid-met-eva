@@ -5,14 +5,14 @@
   },
   "blokken": [
     {
-      "_template": "paginakop",
       "eyebrow": "Privacy",
-      "titel": "Privacyverklaring"
+      "titel": "Privacyverklaring (test)",
+      "_template": "paginakop"
     },
     {
-      "_template": "tekst",
       "achtergrond": "ivoor",
-      "tekst": "[Privacyverklaring – tekst volgt]"
+      "tekst": "[Privacyverklaring – tekst volgt]",
+      "_template": "tekst"
     }
   ]
 }
