@@ -1,12 +1,23 @@
 import { openSync, readSync, closeSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-/** Tina-media kan als https://assets.tina.io/<id>/img/x.jpg terugkomen: terug naar /img/x.jpg. */
+const MEDIA_ROOT = '/img'; // = media.tina.mediaRoot in tina/config.ts
+
+/**
+ * TinaCloud geeft foto's terug als https://assets.tina.io/<clientId>/x.jpg (pad relatief
+ * aan de mediamap). Zet dat terug naar het lokale bestand /img/x.jpg, zodat de foto via
+ * de Netlify Image CDN geoptimaliseerd wordt. Bestaat het lokale bestand niet (bv. net
+ * geüpload in de bewerkpreview), dan blijft het TinaCloud-adres staan.
+ */
 export const toLocalPath = (src?: string | null): string | null => {
   if (!src) return null;
   if (src.startsWith('/')) return src;
   const m = src.match(/^https:\/\/assets\.tina\.io\/[^/]+(\/.+)$/);
-  return m ? m[1] : null;
+  if (!m) return null;
+  const rest = m[1];
+  if (rest.startsWith(`${MEDIA_ROOT}/`)) return rest;
+  const withRoot = `${MEDIA_ROOT}${rest}`;
+  return existsSync(join(process.cwd(), 'public', decodeURIComponent(withRoot))) ? withRoot : rest;
 };
 
 /** Leest breedte/hoogte uit de kop van een JPEG- of PNG-bestand in public/. */
