@@ -1,7 +1,7 @@
 {
   "seo": {
     "titel": "Over Eva – Afscheid met Eva",
-    "omschrijving": "Ik ben Eva: een echte Besse en sinds 2020 Register Uitvaartverzorger. Met mijn eigen aanpak laat ik zien dat professionele en respectvolle uitvaartzorg ook anders kan."
+    "omschrijving": "Ik ben Eva: geboren en getogen in Best en sinds 2020 uitvaartverzorger. Met mijn eigen aanpak laat ik zien dat professionele en respectvolle uitvaartzorg ook heel goed samengaat met een eigentijdse uitstraling."
   },
   "blokken": [
     {
@@ -12,7 +12,7 @@
       "fotoAlt": "Eva met haar man en twee kinderen in een zomers veld",
       "eyebrow": "Over mij",
       "titel": "Ik ben Eva",
-      "tekst": "Een echte Besse. Geboren, getogen en al mijn hele leven woonachtig in Best. Alleen voor een wereldreis van een jaar heb ik mijn vertrouwde omgeving even achter me gelaten. Na thuiskomst trouwde ik met een echte Besse en bouwden we samen ons leven, inmiddels met twee kinderen, verder op in de Speelheide.",
+      "tekst": "Geboren, getogen en al mijn hele leven woonachtig in Best. Alleen voor een wereldreis van een jaar heb ik mijn vertrouwde omgeving even achter me gelaten. Na thuiskomst trouwde ik en bouwden we samen ons leven, inmiddels met twee kinderen, verder op in de Speelheide.",
       "variant": "paginakop"
     },
     {
@@ -24,7 +24,7 @@
       "fotoPositie": "50% 25%",
       "eyebrow": "Uitvaartverzorger sinds 2020",
       "titel": "Het mooiste vak ter wereld",
-      "tekst": "In 2020 durfde ik eindelijk de keuze te maken voor het mooiste vak ter wereld: uitvaartverzorger. Ik was destijds nog relatief jong voor het vak, maar merkte al snel dat ik juist daardoor heel open werd ontvangen door nabestaanden. Respect zit niet in leeftijd of in een zwart, grijs of donkerblauw pak, maar in hoe je met mensen omgaat. Met mijn eigen aanpak laat ik zien dat professionele en respectvolle uitvaartzorg ook anders kan.",
+      "tekst": "Al van jongs af aan had ik een bijzondere interesse in uitvaarten. Toen ik als kind zelf te maken kreeg met verlies, raakte ik gefascineerd door alles wat daarbij kwam kijken. De uitvaart zelf, de rouw eromheen, het samenzijn met familie. Ondanks het verdriet vond ik het een magische periode.\n\nIn 2020 durfde ik eindelijk de stap te zetten naar wat voor mij het mooiste vak ter wereld is. Ik werd uitvaartverzorger bij coöperatie DELA. Destijds was ik nog relatief jong voor het vak, maar ik merkte al snel dat ik juist daardoor heel open werd ontvangen door nabestaanden.\n\nRespect zit niet in leeftijd of in een zwart, grijs of donkerblauw pak, maar in hoe je met mensen omgaat. Met mijn eigen aanpak laat ik zien dat professionele en respectvolle uitvaartzorg ook heel goed samengaat met een eigentijdse uitstraling en vernieuwende ideeën.\n\nDe drang om niet meer binnen kaders te werken en daardoor écht alle tijd en aandacht aan nabestaanden te geven werd zo groot, dat ik afscheid nam van DELA en mijn eigen uitvaartonderneming startte: Afscheid met Eva.",
       "variant": "gap16"
     },
     {
@@ -42,18 +42,21 @@
     {
       "_template": "citaat",
       "citaat": "Nabestaanden ervaren mij als deskundig, betrokken en oprecht. Iemand die rust brengt, goed luistert en vooruitdenkt.",
-      "toelichting": "Ik combineer menselijkheid met professionaliteit, ben creatief en heb een scherp oog voor detail. Want een goede uitvaartverzorger biedt niet alleen medeleven en steun, maar houdt de regie en zorgt dat alles tot in de puntjes geregeld is. Dat geeft rust."
+      "toelichting": "Ik ben creatief en heb een scherp oog voor detail. Want een goede uitvaartverzorger biedt niet alleen medeleven en steun, maar houdt de regie en zorgt dat alles tot in de puntjes geregeld is. Dat geeft rust."
     },
     {
       "_template": "ervaringen",
       "infokaart": {
         "eyebrow": "Samen sterk",
-        "titel": "Mijn zorgteam",
-        "tekst": "[Korte tekst over het zorgteam en de samenwerking met collega-uitvaartverzorger (naam volgt), zodat families dag en nacht en ook tijdens vakanties geholpen worden.]"
+        "titel": "Een vertrouwd gezicht, ook bij mijn afwezigheid",
+        "tekst": "Mocht ik zelf niet in de gelegenheid zijn om jullie bij te staan, dan kunnen jullie rekenen op mijn collega-uitvaartverzorger Marloes Verdonschot van Para Siempre Uitvaartzorg. We delen dezelfde visie op persoonlijke en professionele uitvaartzorg. Zo zijn jullie ook bij mijn afwezigheid in vertrouwde handen, met één vast gezicht."
       },
       "ervaringen": [
-        { "label": "Ervaring", "citaat": "[Echte ervaring van een nabestaande – volgt]", "naam": "[Naam], [plaats]" },
-        { "label": "Ervaring", "citaat": "[Echte ervaring van een nabestaande – volgt]", "naam": "[Naam], [plaats]" }
+        {
+          "label": "Ervaring",
+          "citaat": "Eva heeft ons na het overlijden van mijn lieve moeder, de geliefde vrouw van mijn vader en een fantastische moeder en oma, met zoveel liefde, zorg en aandacht bijgestaan. Met haar professionaliteit, deskundigheid en inzet heeft ze ons enorm veel uit handen genomen. Ze dacht overal in mee, voelde feilloos aan wat we nodig hadden en wist onze wensen zelfs te overtreffen. Haar warme en persoonlijke betrokkenheid heeft in deze verdrietige periode ontzettend veel voor ons betekend. We zijn Eva uit de grond van ons hart dankbaar voor alles wat ze voor ons heeft gedaan.",
+          "naam": "Familie van Hoof, Best"
+        }
       ]
     }
   ]

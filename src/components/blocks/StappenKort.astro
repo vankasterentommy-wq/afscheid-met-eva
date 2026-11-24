@@ -16,7 +16,7 @@ const { data: d, settings } = Astro.props;
     <div class="stack" style="gap:22px">
       {d.eyebrow && <span class="eb" data-tina-field={tinaField(d, 'eyebrow')}>{d.eyebrow}</span>}
       <h2 data-tina-field={tinaField(d, 'titel')}>{d.titel}</h2>
-      <ol class="steps">
+      <ol class="steps kol" style={`--rijen:${Math.ceil((d.stappen?.length ?? 0) / 2) || 1}`}>
         {d.stappen?.map((s) => s && (
           <li data-tina-field={tinaField(s)}><strong data-tina-field={tinaField(s, 'titel')}>{s.titel}</strong><span data-tina-field={tinaField(s, 'tekst')}>{s.tekst}</span></li>
         ))}

@@ -1,19 +1,32 @@
 {
   "seo": {
     "titel": "Afscheid met Eva – uitvaartzorg in Best",
-    "omschrijving": "Een frisse kijk op uitvaartzorg, met aandacht voor wat écht telt. Register Uitvaartverzorger in Best en omgeving, dag en nacht bereikbaar."
+    "omschrijving": "Een frisse kijk op uitvaartzorg, met aandacht voor het leven. Register Uitvaartverzorger in Best en omgeving, dag en nacht bereikbaar."
   },
   "blokken": [
     {
       "_template": "hero",
       "eyebrow": "Uitvaartzorg in Best en omgeving",
       "titel": "Een dierbare overleden?",
-      "tekst": "Je hoeft niet alles zelf uit te zoeken. Ik help je stap voor stap bij het regelen van een mooi afscheid en begeleid je bij alles wat daarbij komt kijken.",
+      "tekst": "Of wil je je alvast voorbereiden op een aankomend overlijden? Je hoeft niet alles zelf uit te zoeken. Ik help je stap voor stap bij het regelen van een mooi en uniek afscheid.",
       "knoppen": [
-        { "tekst": "Bel Eva – dag en nacht", "soort": "bellen", "stijl": "primair" },
-        { "tekst": "Stuur een WhatsApp", "soort": "whatsapp", "stijl": "secundair" }
+        {
+          "tekst": "Bel Eva – dag en nacht",
+          "soort": "bellen",
+          "stijl": "primair"
+        },
+        {
+          "tekst": "Stuur een WhatsApp",
+          "soort": "whatsapp",
+          "stijl": "secundair"
+        }
       ],
-      "usps": ["Register Uitvaartverzorger", "Dag en nacht bereikbaar", "Ongeacht je verzekering", "Binnen 24 uur inzicht in kosten"],
+      "usps": [
+        "Register Uitvaartverzorger",
+        "Dag en nacht bereikbaar",
+        "Ongeacht je verzekering",
+        "Binnen 24 uur inzicht in kosten"
+      ],
       "foto": "/img/eva-bos.jpg",
       "fotoAlt": "Eva, jouw uitvaartverzorger",
       "fotoPositie": "50% 22%",
@@ -24,21 +37,50 @@
       "eyebrow": "Overlijden melden",
       "titel": "Er is een dierbare overleden. Wat nu?",
       "stappen": [
-        { "titel": "Neem de tijd", "tekst": "Er hoeft niet direct iets geregeld te worden. Neem rustig de tijd en informeer familie en/of vrienden waarmee je op dit moment graag samen wil zijn." },
-        { "titel": "Informeer de (huis)arts", "tekst": "De arts stelt het overlijden officieel vast en zorgt dat de nodige papieren worden opgemaakt. Is jullie dierbare thuis overleden? Neem dan contact op met de huisarts of huisartsenpost." },
-        { "titel": "Bel mij, dag en nacht", "tekst": "Ik bespreek met jullie wat er op dat moment nodig is en zorg dat jullie dierbare met alle zorg en aandacht thuis wordt opgebaard of wordt overgebracht naar een plek die goed voelt." },
-        { "titel": "Uitvaart regelen", "tekst": "Ik kom bij jullie thuis langs om in alle rust de wensen voor het afscheid te bespreken." },
-        { "titel": "Inzicht in kosten", "tekst": "Zo snel mogelijk, maar in ieder geval binnen 24 uur, geef ik jullie inzicht in de kosten." },
-        { "titel": "Dag van de uitvaart", "tekst": "Op de dag van de uitvaart komen we op een afgesproken plek samen. Vanaf daar neem ik jullie mee en begeleid ik jullie stap voor stap naar een mooi, passend en uniek afscheid." }
+        {
+          "titel": "Neem de tijd",
+          "tekst": "Er hoeft niet direct iets geregeld te worden. Neem rustig de tijd en informeer familie en/of vrienden waarmee je op dit moment graag samen wil zijn."
+        },
+        {
+          "titel": "Informeer de (huis)arts",
+          "tekst": "De arts stelt het overlijden officieel vast en zorgt dat de nodige papieren worden opgemaakt. Is jullie dierbare thuis overleden? Neem dan contact op met de huisarts of huisartsenpost."
+        },
+        {
+          "titel": "Bel mij, dag en nacht",
+          "tekst": "Ik bespreek met jullie wat er op dat moment nodig is en zorg dat jullie dierbare met alle zorg en aandacht thuis wordt opgebaard of wordt overgebracht naar een plek die goed voelt."
+        },
+        {
+          "titel": "Uitvaart regelen",
+          "tekst": "Ik kom bij jullie thuis langs om de wensen voor het afscheid te bespreken. In de dagen die volgen blijf ik jullie vaste gezicht en hebben we regelmatig contact."
+        },
+        {
+          "titel": "Inzicht in kosten",
+          "tekst": "Zo snel mogelijk, maar in ieder geval binnen 24 uur, geef ik jullie inzicht in de kosten."
+        },
+        {
+          "titel": "Dag van de uitvaart",
+          "tekst": "Op de dag van de uitvaart komen we op een afgesproken plek samen. Vanaf daar neem ik jullie mee en begeleid ik jullie stap voor stap naar een mooi, passend en uniek afscheid."
+        }
       ],
-      "link": { "tekst": "Lees alles over de eerste stappen", "url": "/overlijden-melden" },
+      "link": {
+        "tekst": "Lees alles over de eerste stappen",
+        "url": "/overlijden-melden"
+      },
       "belkaart": {
         "toon": true,
         "metFoto": false,
         "label": "Dag en nacht bereikbaar",
         "knoppen": [
-          { "tekst": "Bel direct", "soort": "bellen", "stijl": "primair" },
-          { "tekst": "WhatsApp", "soort": "whatsapp", "stijl": "secundair" }
+          {
+            "tekst": "Bel direct",
+            "soort": "bellen",
+            "stijl": "primair"
+          },
+          {
+            "tekst": "WhatsApp",
+            "soort": "whatsapp",
+            "stijl": "secundair"
+          }
         ]
       }
     },
@@ -51,12 +93,44 @@
       "_template": "kaarten",
       "eyebrow": "Afscheid met Eva",
       "titel": "Modern of traditioneel.\nGroots of intiem.\nAlles is mogelijk.",
-      "intro": "Een frisse kijk op uitvaartzorg, met aandacht voor wat écht telt.",
+      "intro": "Een frisse kijk op uitvaartzorg, met aandacht voor het leven.",
       "kaarten": [
-        { "foto": "/img/handen-warm.jpg", "fotoAlt": "Twee handen die elkaar troostend vasthouden", "fotoPositie": "50% 50%", "titel": "Overlijden melden", "subtitel": "De eerste stappen", "tekst": "Wat je nu moet doen, en wat je gerust aan mij kunt overlaten.", "link": "/overlijden-melden" },
-        { "foto": "/img/aula-warm.jpg", "fotoAlt": "Lichte afscheidsruimte met bloemen en een kaars", "fotoPositie": "72% 50%", "titel": "Uitvaart regelen", "subtitel": "Persoonlijk ingevuld", "tekst": "Begraven of cremeren, in een kerk, thuis of op een bijzondere plek.", "link": "/uitvaart-regelen" },
-        { "foto": "/img/tafel-warm.jpg", "fotoAlt": "Keukentafel met thee en wilde bloemen", "fotoPositie": "40% 70%", "titel": "Kosten", "subtitel": "Helder vooraf", "tekst": "Een vast regeltarief en kosten van derden zonder extra opslag.", "link": "/kosten" },
-        { "foto": "/img/bloemen-warm.jpg", "fotoAlt": "Boeket met witte rozen en kamille", "fotoPositie": "55% 55%", "titel": "Vóór overlijden", "subtitel": "Rust voor later", "tekst": "Weten wat er kan, geeft rust. Ik denk graag alvast met je mee.", "link": "/voor-overlijden" }
+        {
+          "foto": "/img/handen-warm.jpg",
+          "fotoAlt": "Twee handen die elkaar troostend vasthouden",
+          "fotoPositie": "50% 50%",
+          "titel": "Overlijden melden",
+          "subtitel": "De eerste stappen",
+          "tekst": "Wat je nu moet doen, en wat je gerust aan mij kunt overlaten.",
+          "link": "/overlijden-melden"
+        },
+        {
+          "foto": "/img/aula-warm.jpg",
+          "fotoAlt": "Lichte afscheidsruimte met bloemen en een kaars",
+          "fotoPositie": "72% 50%",
+          "titel": "Uitvaart regelen",
+          "subtitel": "Persoonlijk ingevuld",
+          "tekst": "Begraven of cremeren, in een kerk, thuis of op een bijzondere plek.",
+          "link": "/uitvaart-regelen"
+        },
+        {
+          "foto": "/img/tafel-warm.jpg",
+          "fotoAlt": "Keukentafel met thee en wilde bloemen",
+          "fotoPositie": "40% 70%",
+          "titel": "Kosten",
+          "subtitel": "Helder vooraf",
+          "tekst": "Een vast regeltarief en kosten van derden zonder extra opslag.",
+          "link": "/kosten"
+        },
+        {
+          "foto": "/img/bloemen-warm.jpg",
+          "fotoAlt": "Boeket met witte rozen en kamille",
+          "fotoPositie": "55% 55%",
+          "titel": "Vóór overlijden",
+          "subtitel": "Rust voor later",
+          "tekst": "Weten wat er kan, geeft rust. Ik denk graag alvast met je mee.",
+          "link": "/voor-overlijden"
+        }
       ]
     },
     {
@@ -69,14 +143,25 @@
       "eyebrow": "Jouw uitvaartverzorger",
       "titel": "Ik ben Eva",
       "tekst": "Een echte Besse en sinds 2020 Register Uitvaartverzorger. Respect zit niet in leeftijd of in een donker pak, maar in hoe je met mensen omgaat. Met mijn eigen aanpak laat ik zien dat professionele en respectvolle uitvaartzorg ook anders kan.",
-      "lijst": ["Eén vast aanspreekpunt, dag en nacht bereikbaar", "Binnen 24 uur inzicht in de kosten", "Onafhankelijk: jullie kiezen vrij de locatie"],
-      "link": { "tekst": "Maak kennis met Eva", "url": "/over-eva" },
+      "lijst": [
+        "Eén vast aanspreekpunt, dag en nacht bereikbaar",
+        "Binnen 24 uur inzicht in de kosten",
+        "Onafhankelijk: jullie kiezen vrij de locatie"
+      ],
+      "link": {
+        "tekst": "Maak kennis met Eva",
+        "url": "/over-eva"
+      },
       "variant": "gap18"
     },
     {
       "_template": "ervaringen",
       "ervaringen": [
-        { "label": "Ervaringen van families", "citaat": "[Echte ervaring van een nabestaande – volgt van Eva]", "naam": "[Naam], [plaats]" }
+        {
+          "label": "Ervaringen van families",
+          "citaat": "Wanneer je afscheid moet nemen van een zeer dierbaar familielid, dan is dat enorm verdrietig en heel erg moeilijk. Het is dan ontzettend fijn om iemand naast je te hebben die op een professionele manier alles voor jou regelt en ontzorgt. Iemand die de rust bewaart, overal aan denkt en vooral meedenkt. Daardoor kun je op een waardige manier een mooi, warm en op geheel eigen wijze een afscheid verzorgen. En zo iemand is Eva! Als geen ander heeft Eva voor ons 2 uitvaarten verzorgd. Ze heeft heel goed naar ons geluisterd en onze gevoelens, ideeën en wensen omgezet tot een enorm waardevol afscheid. Wij kijken hier nog steeds heel dankbaar op terug.",
+          "naam": "Peter Das, Best"
+        }
       ]
     }
   ]

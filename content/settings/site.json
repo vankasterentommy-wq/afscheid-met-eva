@@ -21,12 +21,30 @@
     "instellingen": "Cookie-instellingen"
   },
   "menu": [
-    { "tekst": "Overlijden melden", "link": "/overlijden-melden" },
-    { "tekst": "Uitvaart regelen", "link": "/uitvaart-regelen" },
-    { "tekst": "Kosten", "link": "/kosten" },
-    { "tekst": "Vóór overlijden", "link": "/voor-overlijden" },
-    { "tekst": "Over Eva", "link": "/over-eva" },
-    { "tekst": "Contact", "link": "/contact" }
+    {
+      "tekst": "Overlijden melden",
+      "link": "/overlijden-melden"
+    },
+    {
+      "tekst": "Uitvaart regelen",
+      "link": "/uitvaart-regelen"
+    },
+    {
+      "tekst": "Kosten",
+      "link": "/kosten"
+    },
+    {
+      "tekst": "Vóór overlijden",
+      "link": "/voor-overlijden"
+    },
+    {
+      "tekst": "Over Eva",
+      "link": "/over-eva"
+    },
+    {
+      "tekst": "Contact",
+      "link": "/contact"
+    }
   ],
   "knoppen": {
     "bel247": "Bel 24/7",
@@ -40,7 +58,7 @@
     "knopBericht": "Stuur een bericht"
   },
   "footer": {
-    "tekst": "Een frisse kijk op uitvaartzorg, met aandacht voor wat écht telt. Ongeacht waar je verzekerd bent.",
+    "tekst": "Een frisse kijk op uitvaartzorg, met aandacht voor het leven.",
     "kopContact": "Contact",
     "kopMenu": "Snel naar",
     "kopWerkgebied": "Werkgebied",

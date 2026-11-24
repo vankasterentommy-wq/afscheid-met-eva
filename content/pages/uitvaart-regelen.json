@@ -1,22 +1,66 @@
 {
   "seo": {
     "titel": "Uitvaart regelen – Afscheid met Eva",
-    "omschrijving": "Een afscheid dat bij jullie past. Ik kom bij jullie thuis langs om in alle rust de wensen voor het afscheid te bespreken."
+    "omschrijving": "Een afscheid dat bij jullie past. Modern of traditioneel, groots of intiem: ik kom bij jullie thuis langs en samen bespreken we wat voor jullie écht belangrijk is."
   },
   "blokken": [
     {
       "_template": "paginakop",
       "eyebrow": "Uitvaart regelen",
       "titel": "Een afscheid dat bij jullie past",
-      "intro": "Ik kom bij jullie thuis langs om in alle rust de wensen voor het afscheid te bespreken. Samen kijken we wat voor jullie belangrijk is."
+      "intro": "Modern of traditioneel. Groots of intiem. Alles is mogelijk. Ik kom bij jullie thuis langs en samen bespreken we wat voor jullie écht belangrijk is. Zonder vast draaiboek, met alle ruimte voor eigen wensen en originele ideeën.\n\nMisschien weten jullie al precies hoe het afscheid eruit moet zien, misschien hebben jullie nog geen idee. Ik denk mee en laat zien wat er allemaal mogelijk is. Jullie hoeven niet overal zelf aan te denken, daarvoor ben ik er."
     },
     {
       "_template": "kaarten",
-      "intro": "Bij het regelen van een uitvaart komt veel kijken. Om het overzichtelijk te houden, is wat we gaan bespreken eigenlijk in drie onderdelen te verdelen:",
+      "intro": "Wat we samen gaan regelen is in drie onderwerpen te verdelen:",
       "kaarten": [
-        { "foto": "/img/roos-dicht.jpg", "fotoAlt": "Bordeaux stokroos van dichtbij", "fotoPositie": "50% 40%", "subtitel": "Deel 1", "titel": "De dagen voorafgaand aan de uitvaart", "lijst": ["De laatste verzorging, eventueel samen met familie", "Opbaren: thuis of in een uitvaartcentrum", "Een tastbare herinnering, zoals een vingerafdruk", "Uitzoeken van een uitvaartkist, mand of alternatief", "Bloemstuk, bloemenband of losse bloemen", "Gelegenheid voor rouwbezoek"] },
-        { "foto": "/img/hero-warm.jpg", "fotoAlt": "Bospad in de ochtendmist", "fotoPositie": "72% 50%", "subtitel": "Deel 2", "titel": "De uitvaart zelf", "lijst": ["Cremeren of (natuur)begraven", "De datum en locatie", "Vervoer en aankomst", "Invulling met muziek, foto's en herinneringen", "Kinderen betrekken bij het afscheid", "Een opname of livestream", "Fotograaf", "Samenzijn na afloop (borrel, proostmoment of koffietafel)"] },
-        { "foto": "/img/roos-muur.jpg", "fotoAlt": "Stokrozen langs een oude muur", "fotoPositie": "50% 45%", "subtitel": "Deel 3", "titel": "Het drukwerk", "lijst": ["Een rouwkaart", "Een advertentie", "Herinneringsprentjes", "Een foto bij de kist", "Een condoleanceregister", "Overig persoonlijk drukwerk"] }
+        {
+          "foto": "/img/roos-dicht.jpg",
+          "fotoAlt": "Bordeaux stokroos van dichtbij",
+          "fotoPositie": "50% 40%",
+          "subtitel": "Deel 1",
+          "titel": "De dagen tussen overlijden en uitvaart",
+          "lijst": [
+            "De laatste verzorging, eventueel samen met familie",
+            "Opbaren: thuis of in een uitvaartcentrum",
+            "Een tastbare herinnering, zoals een vingerafdruk",
+            "Uitzoeken van een uitvaartkist, mand of alternatief",
+            "Bloemstuk, bloemenband of losse bloemen",
+            "Gelegenheid voor rouwbezoek"
+          ]
+        },
+        {
+          "foto": "/img/hero-warm.jpg",
+          "fotoAlt": "Bospad in de ochtendmist",
+          "fotoPositie": "72% 50%",
+          "subtitel": "Deel 2",
+          "titel": "De uitvaart zelf",
+          "lijst": [
+            "Cremeren of (natuur)begraven",
+            "De datum en locatie",
+            "Vervoer en aankomst",
+            "Invulling met muziek, foto's en herinneringen",
+            "Kinderen betrekken bij het afscheid",
+            "Een opname of livestream",
+            "Fotograaf",
+            "Samenzijn na afloop (borrel, proostmoment of koffietafel)"
+          ]
+        },
+        {
+          "foto": "/img/roos-muur.jpg",
+          "fotoAlt": "Stokrozen langs een oude muur",
+          "fotoPositie": "50% 45%",
+          "subtitel": "Deel 3",
+          "titel": "Het drukwerk",
+          "lijst": [
+            "Een rouwkaart",
+            "Een advertentie",
+            "Herinneringsprentjes",
+            "Een foto bij de kist",
+            "Een condoleanceregister",
+            "Overig persoonlijk drukwerk"
+          ]
+        }
       ]
     },
     {
@@ -29,7 +73,12 @@
       "eyebrow": "De plek",
       "titel": "Vrij in de keuze van de locatie",
       "tekst": "Ik werk onafhankelijk en ben niet gebonden aan vaste locaties. Of jullie nu kiezen voor een traditionele uitvaartlocatie of juist een bijzondere, persoonlijke plek: er is veel mogelijk.\n\nDenk bijvoorbeeld aan:",
-      "chips": ["Een kerk, crematorium of uitvaartcentrum", "Een sfeervolle locatie zoals ’t Boshuys of Prinsenhof", "Een restaurant of café", "Een vertrouwde plek, misschien zelfs in jullie eigen tuin"],
+      "chips": [
+        "Een kerk, crematorium of uitvaartcentrum",
+        "Een sfeervolle uitvaartlocatie op een externe locatie",
+        "Een restaurant of café",
+        "Een vertrouwde plek, misschien zelfs in jullie eigen tuin"
+      ],
       "tekstNa": "Door mijn jarenlange ervaring in de regio ken ik veel mooie en bijzondere locaties. Ik denk graag creatief met jullie mee om een plek te vinden die past bij jullie wensen, het aantal gasten en het budget."
     },
     {
@@ -52,7 +101,7 @@
       "fotoPositie": "50% 35%",
       "eyebrow": "(Klein)kinderen",
       "titel": "Kinderen horen er ook bij",
-      "tekst": "Je kunt kinderen weghouden bij een afscheid, maar niet bij het verdriet wat ze om zich heen voelen. Juist daarom vind ik het belangrijk om (klein)kinderen vanaf het begin te betrekken. Niet alleen tijdens de uitvaart, maar zelfs al bij het maken van keuzes en de voorbereidingen.\n\nSamen kijken we wat bij hen past en hun leeftijd past en waar zij zich prettig bij voelen.\n\nVan het versieren van de kist, het uitkiezen van muziek tot bellen blazen tijdens de afscheidsdienst. Door kinderen de ruimte te geven om op hun eigen manier mee te doen, voelen ze zich betrokken en krijgen ook hun emoties en herinneringen een plek."
+      "tekst": "Naast het verdriet wat kinderen zelf hebben, voelen ze ook het verdriet van de volwassenen om zich heen. Juist daarom vind ik het zo belangrijk om (klein)kinderen vanaf het begin te betrekken. Niet alleen tijdens de uitvaart, maar zelfs al bij het maken van keuzes en de voorbereidingen.\n\nSamen kijken we wat bij het kind en de leeftijd past en waar zij zich prettig bij voelen.\n\nVan het versieren van de kist, het uitkiezen van muziek tot bellen blazen tijdens de afscheidsdienst. Door kinderen de ruimte te geven om op hun eigen manier mee te doen, voelen ze zich betrokken en krijgen ook hun emoties en herinneringen een plek."
     },
     {
       "_template": "citaat",

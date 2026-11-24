@@ -142,7 +142,7 @@ const paginakop: Template = {
   fields: [
     txt('eyebrow', 'Klein kopje boven de titel'),
     txt('titel', 'Titel'),
-    area('intro', 'Introductietekst'),
+    alinea('intro', 'Introductietekst'),
     txt('label', 'Label onder de tekst (optioneel)', 'Bijvoorbeeld “Kosteloos en vrijblijvend”'),
   ],
 };
@@ -368,7 +368,12 @@ const contact: Template = {
 const tekst: Template = {
   name: 'tekst',
   label: 'Tekst (leeskolom)',
-  fields: [achtergrond, txt('eyebrow', 'Klein kopje boven de titel'), txt('titel', 'Titel'), alinea('tekst', 'Tekst')],
+  fields: [
+    achtergrond,
+    txt('eyebrow', 'Klein kopje boven de titel'),
+    txt('titel', 'Titel'),
+    area('tekst', 'Tekst', 'Laat een lege regel tussen alinea’s. Een tussenkopje: begin de regel met ## (bijvoorbeeld: ## Jouw rechten).'),
+  ],
 };
 
 /* ----------------------------- Config ----------------------------- */

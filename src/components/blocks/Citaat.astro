@@ -12,7 +12,12 @@ const { data: d } = Astro.props;
   <div class="wrap">
     <Img class="deco" src="/img/stokroos-ivoor.png" decorative widths={[92]} sizes="46px" />
     <q data-tina-field={tinaField(d, 'citaat')}>{d.citaat}</q>
-    {d.naam && <span data-tina-field={tinaField(d, 'naam')}>{d.naam}</span>}
+    {d.naam && (d.naam.trim().toLowerCase() === 'eva' ? (
+      /* "Eva" in het handschrift van het logo (uitgeknipt uit logo2-ivoor.png) */
+      <img class="hand" src="/img/eva-handschrift.png" alt={d.naam} width="188" height="133" loading="lazy" decoding="async" data-tina-field={tinaField(d, 'naam')} />
+    ) : (
+      <span data-tina-field={tinaField(d, 'naam')}>{d.naam}</span>
+    ))}
     {d.toelichting && <p class="qsub" data-tina-field={tinaField(d, 'toelichting')}>{d.toelichting}</p>}
   </div>
 </section>
