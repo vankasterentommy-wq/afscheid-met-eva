@@ -9,7 +9,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 const OUT = process.argv[2] ?? '_controle';
 mkdirSync(OUT, { recursive: true });
 const SRC = 'http://localhost:4501/index.html';
-const NEW = 'http://localhost:4500';
+const NEW = process.env.NEW ?? 'http://localhost:4500';
 const pages = [
   ['home', '#home', '/'],
   ['overlijden-melden', '#overlijden', '/overlijden-melden'],
