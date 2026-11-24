@@ -64,7 +64,7 @@ node scripts/checks.mjs                # overflow, tikvlakken, hero-knop, letter
 ## Aandachtspunten
 
 - **Privacyverklaring (verplicht te vermelden):** inzendingen van het contactformulier worden verwerkt en opgeslagen via **Netlify Forms** (Netlify, Inc., VS), en meldingen gaan per e-mail naar Eva. De privacyverklaring (`content/pages/privacy.json`, nu nog placeholder) moet dit noemen, inclusief welke gegevens het formulier vraagt (naam, telefoon, e-mail, bericht, onderwerp), dat Netlify daarbij ook het **IP-adres** van de afzender vastlegt, en hoe lang ze bewaard blijven.
-- **Nog te bevestigen:** het e-mailadres blijft de placeholder `[info@afscheidmeteva.nl]` tot Eva het bevestigt. `SITE_URL` blijft voorlopig `https://afscheidmeteva.nl` tot het domein vastligt.
+- **Nog te bevestigen:** `SITE_URL` blijft voorlopig `https://afscheidmeteva.nl` tot het domein vastligt.
 - **Netlify-badge:** nieuwe projecten op het gratis plan tonen rechtsonder een "Powered by Netlify"-badge, die op mobiel over de WhatsApp-knop valt. Die is uitgezet via *Project configuration → General → Powered by Netlify badge*. Controleer dit na elke wijziging van het Netlify-plan of -project.
 - **Huisstijl ligt vast:** de taupe subtitels op de kaarten zijn Eva's kleurkeuze. Lighthouse meldt daar een contrastwaarschuwing over; die laten we bewust staan.
 - **Windows-fix**: `scripts/patch-tina-windows.mjs` (postinstall) repareert een bug in `@tinacms/cli` waardoor `tinacms dev/build` crasht als het projectpad een spatie bevat. Op Netlify doet het niets.
