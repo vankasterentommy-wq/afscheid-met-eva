@@ -353,6 +353,8 @@ const contact: Template = {
     txt('emailTekst', 'Tekst bij e-mailadres'),
     txt('gebiedTekst', 'Tekst bij werkgebied'),
     txt('adresTekst', 'Tekst bij adres', 'Bijvoorbeeld “Bekijk op Google Maps”'),
+    txt('kaartKnop', 'Knop op de kaart', 'Bijvoorbeeld “Toon kaart”. Laat leeg om geen kaart te tonen.'),
+    txt('kaartNoot', 'Kleine tekst onder de knop', 'Uitleg dat Google pas na klikken wordt geladen.'),
     ...foto('foto', 'Foto (alleen computerscherm)'),
     txt('formTitel', 'Titel formulier'),
     txt('formVraag', 'Vraag boven de keuzes'),

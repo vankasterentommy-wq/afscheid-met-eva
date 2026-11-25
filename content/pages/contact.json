@@ -18,6 +18,8 @@
       "emailTekst": "E-mail",
       "gebiedTekst": "Ik kom bij jullie thuis langs",
       "adresTekst": "Bekijk op Google Maps",
+      "kaartKnop": "Toon kaart",
+      "kaartNoot": "De kaart wordt geladen via Google Maps.",
       "foto": "/img/eva-portret.jpg",
       "fotoAlt": "Portret van Eva",
       "fotoPositie": "50% 22%",

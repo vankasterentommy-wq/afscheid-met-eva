@@ -26,6 +26,24 @@ const adres = adresRegel(s);
         )}
         <div class="crow"><span class="ic"><Icon name="pin" /></span><span><b>{c?.werkgebied}</b><small data-tina-field={tinaField(d, 'gebiedTekst')}>{d.gebiedTekst}</small></span></div>
       </div>
+      {adres && d.kaartKnop && (
+        <div class="kaart" data-kaart-src={`https://maps.google.com/maps?q=${encodeURIComponent(adres)}&z=15&output=embed`} data-kaart-titel={`Kaart: ${adres}`}>
+          {/* Getekende kaart in huisstijl; Google laadt pas na een klik (geen cookies vooraf). */}
+          <svg class="kaart-bg" viewBox="0 0 420 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="420" height="240" fill="#F3ECE9" />
+            <path d="M250 0c-10 40 30 70 20 110s-50 60-40 130" fill="none" stroke="#E8D7D3" stroke-width="22" stroke-linecap="round" />
+            <path d="M-10 70C80 60 160 95 240 88s130-30 190-20M-10 175c90-10 170 10 250 0s120-25 190-15M120 -10c5 70-15 150 0 260M330 -10c-10 90 10 170-5 260" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" />
+            <path d="M-10 125c70 5 140-12 210-5s150 15 230 5M60 -10c8 60-6 120 4 260M190 -10c-6 50 8 100 0 140M190 130c4 40-4 80 0 120M270 30h160M0 30h110M260 215h170M0 220h110" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".9" />
+            <circle cx="60" cy="40" r="26" fill="#E2E3D3" /><circle cx="370" cy="200" r="34" fill="#E2E3D3" />
+          </svg>
+          <div class="kaart-inhoud">
+            <span class="kaart-pin"><Icon name="pin" /></span>
+            <b>{adres}</b>
+            <button type="button" class="btn btn-s" data-kaart-laden data-tina-field={tinaField(d, 'kaartKnop')}>{d.kaartKnop}</button>
+            {d.kaartNoot && <small data-tina-field={tinaField(d, 'kaartNoot')}>{d.kaartNoot}</small>}
+          </div>
+        </div>
+      )}
       <Img
         class="arch hide-m"
         src={d.foto}
@@ -59,3 +77,20 @@ const adres = adresRegel(s);
     </form>
   </div>
 </section>
+
+<script>
+  // Google Maps pas laden na een klik (event delegation: werkt ook na verversen in Tina)
+  document.addEventListener('click', (e) => {
+    const knop = (e.target as Element | null)?.closest('[data-kaart-laden]');
+    const kaart = knop?.closest<HTMLElement>('.kaart');
+    if (!kaart?.dataset.kaartSrc) return;
+    const f = document.createElement('iframe');
+    f.src = kaart.dataset.kaartSrc;
+    f.title = kaart.dataset.kaartTitel ?? 'Kaart';
+    f.loading = 'lazy';
+    f.referrerPolicy = 'no-referrer-when-downgrade';
+    f.allowFullscreen = true;
+    kaart.classList.add('geladen');
+    kaart.replaceChildren(f);
+  });
+</script>
