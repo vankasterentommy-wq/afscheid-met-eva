@@ -43,7 +43,13 @@ const jsonLd = {
   logo: new URL('/img/logo2-bordeaux.png', site).href,
   image: new URL('/img/eva-bos.jpg', site).href,
   telephone: s?.contact?.telefoonLink ?? undefined,
-  address: { '@type': 'PostalAddress', addressLocality: 'Best', addressCountry: 'NL' },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: s?.contact?.adres || undefined,
+    postalCode: s?.contact?.postcode || undefined,
+    addressLocality: s?.contact?.plaats || 'Best',
+    addressCountry: 'NL',
+  },
   areaServed: [{ '@type': 'City', name: 'Best' }, s?.contact?.werkgebied].filter(Boolean),
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',

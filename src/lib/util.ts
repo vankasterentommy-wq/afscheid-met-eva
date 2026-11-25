@@ -15,6 +15,17 @@ export const waHref = (s?: Settings | null) => `https://wa.me/${s?.contact?.what
 /** Placeholder-adressen als [info@…] krijgen een mailto zonder haakjes. */
 export const mailHref = (s?: Settings | null) => `mailto:${(s?.contact?.email ?? '').replace(/[[\]]/g, '')}`;
 
+/** "Zevensprong 14, 5683 KR Best" (leeg als er geen straat is ingevuld). */
+export const adresRegel = (s?: Settings | null): string => {
+  const c = s?.contact;
+  if (!c?.adres?.trim()) return '';
+  const plaats = [c.postcode, c.plaats].filter(Boolean).join(' ');
+  return [c.adres.trim(), plaats].filter(Boolean).join(', ');
+};
+/** Link naar Google Maps (opent de app op de telefoon). Geen ingesloten kaart, dus geen Google-cookies. */
+export const mapsHref = (s?: Settings | null) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(adresRegel(s))}`;
+
 export interface KnopLike {
   tekst?: string | null;
   soort?: string | null;
