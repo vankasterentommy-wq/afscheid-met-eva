@@ -2,7 +2,7 @@
 import { tinaField } from '@tinacms/astro/tina-field';
 import Icon from '../ui/Icon.astro';
 import Img from '../ui/Img.astro';
-import { mailHref, telHref, waHref } from '../../lib/util';
+import { adresRegel, mailHref, mapsHref, telHref, waHref } from '../../lib/util';
 import type { PaginaBlokkenContact } from '../../../tina/__generated__/types';
 import type { Settings } from '../../lib/data';
 
@@ -12,6 +12,7 @@ interface Props {
 }
 const { data: d, settings: s } = Astro.props;
 const c = s?.contact;
+const adres = adresRegel(s);
 ---
 <section data-tina-field={tinaField(d)}>
   <div class="wrap sec cgrid">
@@ -20,6 +21,9 @@ const c = s?.contact;
         <a href={telHref(s)} class="crow"><span class="ic"><Icon name="phone" /></span><span><b>{c?.telefoon}</b><small data-tina-field={tinaField(d, 'belTekst')}>{d.belTekst}</small></span></a>
         <a href={waHref(s)} class="crow"><span class="ic"><Icon name="chat" /></span><span><b data-tina-field={tinaField(d, 'whatsappTitel')}>{d.whatsappTitel}</b><small data-tina-field={tinaField(d, 'whatsappTekst')}>{d.whatsappTekst}</small></span></a>
         <a href={mailHref(s)} class="crow"><span class="ic"><Icon name="mail" /></span><span><b>{c?.email}</b><small data-tina-field={tinaField(d, 'emailTekst')}>{d.emailTekst}</small></span></a>
+        {adres && (
+          <a href={mapsHref(s)} class="crow" target="_blank" rel="noopener"><span class="ic"><Icon name="pin" /></span><span><b>{adres}</b><small data-tina-field={tinaField(d, 'adresTekst')}>{d.adresTekst}</small></span></a>
+        )}
         <div class="crow"><span class="ic"><Icon name="pin" /></span><span><b>{c?.werkgebied}</b><small data-tina-field={tinaField(d, 'gebiedTekst')}>{d.gebiedTekst}</small></span></div>
       </div>
       <Img
