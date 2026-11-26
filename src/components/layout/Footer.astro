@@ -2,7 +2,7 @@
 import { tinaField } from '@tinacms/astro/tina-field';
 import Icon from '../ui/Icon.astro';
 import Img from '../ui/Img.astro';
-import { mailHref, safeUrl, telHref, waHref } from '../../lib/util';
+import { adresRegel, mailHref, safeUrl, telHref, waHref } from '../../lib/util';
 import type { Settings } from '../../lib/data';
 
 interface Props {
@@ -14,6 +14,7 @@ const { settings: s, cookies = false } = Astro.props;
 const c = s?.contact;
 const f = s?.footer;
 const cb = s?.callband;
+const adres = adresRegel(s);
 ---
 <Img class="fdeco" src="/img/stokroos-ivoor.png" decorative widths={[180]} sizes="90px" />
 <div class="fcta">
@@ -30,7 +31,7 @@ const cb = s?.callband;
 </div>
 <div class="wrap fmain">
   <div class="brand">
-    <img src="/img/logo2-ivoor.png" alt="Afscheid met Eva" width="640" height="233" loading="lazy" decoding="async" />
+    <Img src="/img/logo2-ivoor.png" alt="Afscheid met Eva" widths={[400, 460]} sizes="(min-width: 861px) 230px, 200px" />
     <span style="max-width:300px" data-tina-field={f ? tinaField(f, 'tekst') : undefined}>{f?.tekst}</span>
   </div>
   <div>
@@ -38,6 +39,7 @@ const cb = s?.callband;
     <a href={telHref(s)}>{c?.telefoon}</a>
     <a href={waHref(s)}>{s?.knoppen?.whatsappKort}</a>
     <a href={mailHref(s)}>{c?.email}</a>
+    {adres && <span>{adres}</span>}
     <span>{c?.bereikbaar}</span>
   </div>
   <div>

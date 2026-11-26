@@ -21,13 +21,13 @@ interface Props {
 }
 const { page, settings } = Astro.props;
 ---
-{page?.blokken?.map((b) => {
+{page?.blokken?.map((b, i) => {
   if (!b) return null;
   switch (b.__typename) {
     case 'PaginaBlokkenHero': return <Hero data={b} settings={settings} />;
     case 'PaginaBlokkenPaginakop': return <Paginakop data={b} />;
     case 'PaginaBlokkenFotoTekst': return <FotoTekst data={b} settings={settings} />;
-    case 'PaginaBlokkenKaarten': return <Kaarten data={b} />;
+    case 'PaginaBlokkenKaarten': return <Kaarten data={b} index={i} />;
     case 'PaginaBlokkenStappenKort': return <StappenKort data={b} settings={settings} />;
     case 'PaginaBlokkenStappen': return <Stappen data={b} settings={settings} />;
     case 'PaginaBlokkenChecklist': return <Checklist data={b} />;

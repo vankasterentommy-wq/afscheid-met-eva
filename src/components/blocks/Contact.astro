@@ -69,7 +69,7 @@ const adres = adresRegel(s);
       <label class="fl"><span data-tina-field={tinaField(d, 'labelNaam')}>{d.labelNaam}</span><input type="text" name="naam" autocomplete="name" required /></label>
       <div class="frow">
         <label class="fl"><span data-tina-field={tinaField(d, 'labelTelefoon')}>{d.labelTelefoon}</span><input type="tel" name="telefoon" autocomplete="tel" /></label>
-        <label class="fl"><span data-tina-field={tinaField(d, 'labelEmail')}>{d.labelEmail}</span><input type="email" name="email" autocomplete="email" /></label>
+        <label class="fl"><span data-tina-field={tinaField(d, 'labelEmail')}>{d.labelEmail}</span><input type="email" name="email" autocomplete="email" required /></label>
       </div>
       <label class="fl"><span data-tina-field={tinaField(d, 'labelBericht')}>{d.labelBericht}</span><textarea name="bericht" rows="4" required></textarea></label>
       <button type="submit" class="btn btn-p" data-tina-field={tinaField(d, 'knopTekst')}>{d.knopTekst}</button>

@@ -6,8 +6,10 @@ import type { PaginaBlokkenKaarten } from '../../../tina/__generated__/types';
 
 interface Props {
   data: PaginaBlokkenKaarten;
+  /** Plek van dit blok op de pagina; direct onder de paginakop laadt de eerste foto meteen. */
+  index?: number;
 }
-const { data: d } = Astro.props;
+const { data: d, index = 99 } = Astro.props;
 const kaarten = (d.kaarten ?? []).filter((k): k is NonNullable<typeof k> => !!k);
 const titel = lines(d.titel);
 const sizes = kaarten.length > 3 ? '(min-width: 861px) 25vw, 78vw' : '(min-width: 861px) 33vw, 78vw';
@@ -23,9 +25,9 @@ const sizes = kaarten.length > 3 ? '(min-width: 861px) 25vw, 78vw' : '(min-width
     <p style="color:var(--text);max-width:720px;margin:0 0 22px" data-tina-field={tinaField(d, 'intro')}>{d.intro}</p>
   ) : null}
   <div class:list={['cards', { c3: kaarten.length <= 3 }]}>
-    {kaarten.map((k) => {
+    {kaarten.map((k, ki) => {
       const pos = k.fotoPositie ? `object-position:${k.fotoPositie}` : undefined;
-      const img = <Img src={k.foto} alt={k.fotoAlt} style={pos} widths={[400, 640, 800]} sizes={sizes} field={tinaField(k, 'foto')} />;
+      const img = <Img src={k.foto} alt={k.fotoAlt} style={pos} eager={index <= 1 && ki === 0} widths={[400, 640, 800]} sizes={sizes} field={tinaField(k, 'foto')} />;
       const url = safeUrl(k.link);
       if (url) {
         return (
