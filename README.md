@@ -82,7 +82,8 @@ node scripts/checks.mjs                # overflow, tikvlakken, hero-knop, letter
 
 ## Aandachtspunten
 
-- **Privacyverklaring (verplicht te vermelden):** inzendingen van het contactformulier worden verwerkt en opgeslagen via **Netlify Forms** (Netlify, Inc., VS), en meldingen gaan per e-mail naar Eva. De privacyverklaring (`content/pages/privacy.json`, nu nog placeholder) moet dit noemen, inclusief welke gegevens het formulier vraagt (naam, telefoon, e-mail, bericht, onderwerp), dat Netlify daarbij ook het **IP-adres** van de afzender vastlegt, en hoe lang ze bewaard blijven.
+- **Privacyverklaring (verplicht te vermelden):** inzendingen van het contactformulier worden verwerkt en opgeslagen via **Netlify Forms** (Netlify, Inc., VS), en meldingen gaan per e-mail naar Eva. De privacyverklaring (`content/pages/privacy.json`) noemt dit, inclusief het **IP-adres** en de Google-cookies (door Eva goedgekeurd).
+- **Algemene voorwaarden: bewust (nog) geen pagina.** De pagina en de footerlink zijn weggehaald tot er tekst is. Terugzetten: maak `src/pages/voorwaarden.astro` (`<Page slug="voorwaarden" path="/voorwaarden" />`) en `content/pages/voorwaarden.json` (paginakop + tekstblok; zie git-historie, commit vóór "Voorwaarden-pagina tijdelijk weg"), en vul in Tina bij Instellingen → Footer de "Linktekst voorwaarden" in (leeg = geen link).
 - **Nog te bevestigen:** `SITE_URL` blijft voorlopig `https://afscheidmeteva.nl` tot het domein vastligt.
 - **Netlify-badge:** nieuwe projecten op het gratis plan tonen rechtsonder een "Powered by Netlify"-badge, die op mobiel over de WhatsApp-knop valt. Die is uitgezet via *Project configuration → General → Powered by Netlify badge*. Controleer dit na elke wijziging van het Netlify-plan of -project.
 - **Huisstijl ligt vast:** de taupe subtitels op de kaarten zijn Eva's kleurkeuze. Lighthouse meldt daar een contrastwaarschuwing over; die laten we bewust staan.
