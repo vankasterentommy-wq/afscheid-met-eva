@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Handleiding: je website zelf aanpassen</title>
+<style>
+@font-face{font-family:"Yeseva One";src:url("../../node_modules/@fontsource/yeseva-one/files/yeseva-one-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:Jost;font-weight:400;src:url("../../node_modules/@fontsource/jost/files/jost-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:Jost;font-weight:500;src:url("../../node_modules/@fontsource/jost/files/jost-latin-500-normal.woff2") format("woff2")}
+@page{size:A4;margin:0}
+:root{--b:#653548;--plum:#704A56;--ivoor:#FAF7F2;--blush:#E8D7D3;--taupe:#A9968E;--ink:#2E2226;--text:#4A3B40}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff}
+body{font-family:Jost,sans-serif;color:var(--ink);font-size:12pt;line-height:1.55}
+.pagina{width:210mm;height:297mm;padding:18mm 18mm 16mm;position:relative;overflow:hidden;page-break-after:always;background:var(--ivoor)}
+.pagina:last-child{page-break-after:auto}
+h1,h2{font-family:"Yeseva One",serif;font-weight:400;color:var(--b);margin:0;line-height:1.15}
+h1{font-size:34pt}
+h2{font-size:21pt;margin-bottom:4mm}
+.eb{font-size:8.5pt;letter-spacing:.22em;text-transform:uppercase;color:var(--plum);font-weight:500;display:flex;align-items:center;gap:3mm;margin-bottom:2.5mm}
+.eb:before{content:"";width:9mm;height:1px;background:var(--taupe)}
+p{margin:0 0 3mm}
+ol.stappen{list-style:none;counter-reset:s;padding:0;margin:0 0 4mm}
+ol.stappen li{counter-increment:s;position:relative;padding:0 0 2.6mm 10mm}
+ol.stappen li:before{content:counter(s);position:absolute;left:0;top:.2mm;width:6.5mm;height:6.5mm;border-radius:50%;background:var(--b);color:var(--ivoor);font-size:9pt;font-weight:500;display:flex;align-items:center;justify-content:center}
+.scherm{position:relative;border-radius:3mm;overflow:hidden;box-shadow:0 1mm 4mm rgba(101,53,72,.18);border:1px solid #e5d9d3;margin:2mm 0 4mm;background:#fff}
+.scherm img{display:block;width:100%}
+.mark{position:absolute;width:12mm;height:12mm;margin:-6mm 0 0 -6mm;border-radius:50%;border:.8mm solid #d0342c;box-shadow:0 0 0 1mm rgba(255,255,255,.7)}
+.mark.breed{width:30mm;height:11mm;margin:-5.5mm 0 0 -15mm;border-radius:6mm}
+.nr{position:absolute;width:6.5mm;height:6.5mm;margin:-3.25mm 0 0 -3.25mm;border-radius:50%;background:#d0342c;color:#fff;font-size:9pt;font-weight:500;display:flex;align-items:center;justify-content:center}
+.tip{background:#fff;border-left:1.2mm solid var(--b);border-radius:2mm;padding:3.5mm 4.5mm;margin:3mm 0;font-size:11pt}
+.tip b{color:var(--b)}
+.let{background:var(--blush);border-radius:2mm;padding:3.5mm 4.5mm;margin:3mm 0;font-size:11pt}
+.voet{position:absolute;left:18mm;right:18mm;bottom:9mm;display:flex;justify-content:space-between;font-size:8.5pt;color:var(--taupe)}
+.twee{display:grid;grid-template-columns:62mm 1fr;gap:7mm;align-items:start}
+.woord{display:grid;grid-template-columns:30mm 1fr;gap:1.5mm 4mm;font-size:11pt;margin:2mm 0 4mm}
+.woord b{color:var(--b);font-weight:500}
+.knop{display:inline-block;background:var(--b);color:#fff;border-radius:5mm;padding:.3mm 3mm;font-size:10pt;font-weight:500}
+.knop.licht{background:#ecc3b3}
+.adres{font-size:15pt;font-weight:500;color:var(--b);background:#fff;border-radius:2.5mm;padding:3mm 4.5mm;display:inline-block;margin:1mm 0 4mm}
+/* omslag */
+.omslag{background:var(--b);color:var(--ivoor);display:flex;flex-direction:column;justify-content:space-between}
+.omslag h1{color:var(--ivoor);font-size:40pt;margin-top:8mm}
+.omslag .logo{width:62mm}
+.omslag .sub{font-size:15pt;opacity:.92;max-width:140mm;margin-top:6mm}
+.omslag .inhoud{background:rgba(250,247,242,.08);border-radius:3mm;padding:6mm 7mm;font-size:11.5pt}
+.omslag .inhoud ol{margin:2mm 0 0;padding-left:5mm}
+.omslag .inhoud li{margin:1mm 0}
+.omslag .deco{position:absolute;right:14mm;top:40mm;width:28mm;opacity:.35}
+</style>
+</head>
+<body>
+
+<!-- 1. Omslag -->
+<section class="pagina omslag">
+  <div>
+    <img class="logo" src="../../public/img/logo2-ivoor.png" alt="Afscheid met Eva">
+    <img class="deco" src="../../public/img/stokroos-ivoor.png" alt="">
+    <h1>Je website zelf<br>aanpassen</h1>
+    <p class="sub">Een korte handleiding voor Eva. Teksten veranderen, een foto wisselen en opslaan, stap voor stap.</p>
+  </div>
+  <div class="inhoud">
+    <b>In deze handleiding</b>
+    <ol>
+      <li>Inloggen</li>
+      <li>Zo ziet het scherm eruit</li>
+      <li>Een tekst aanpassen</li>
+      <li>Een foto wisselen</li>
+      <li>Telefoonnummer, e-mail en menu</li>
+      <li>Blokken toevoegen of verplaatsen</li>
+      <li>Opslaan</li>
+      <li>Iets fout gegaan? Geen zorgen</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 2. Voor je begint + inloggen -->
+<section class="pagina">
+  <div class="eb">Voor je begint</div>
+  <h2>Je kunt niets kapotmaken</h2>
+  <p>Kleuren, lettertypes en de opmaak van je website liggen vast. Je past alleen de <b>inhoud</b> aan: teksten en foto's. En alles wat je opslaat, kan altijd weer worden teruggezet.</p>
+  <div class="tip"><b>Tip:</b> werk het liefst op een <b>computer of laptop</b>. Op een telefoon kan het ook, maar het scherm is dan wel erg klein.</div>
+  <p style="margin-top:5mm">Het beheerscherm is in het Engels. Deze woorden kom je tegen:</p>
+  <div class="woord">
+    <b>Log in</b><span>inloggen</span>
+    <b>Save</b><span>opslaan (je wijziging gaat live)</span>
+    <b>Reset</b><span>wijzigingen ongedaan maken (vóór het opslaan)</span>
+    <b>Upload</b><span>een foto vanaf je computer toevoegen</span>
+  </div>
+
+  <div class="eb" style="margin-top:6mm">Stap 1</div>
+  <h2>Inloggen</h2>
+  <ol class="stappen">
+    <li>Ga in je browser naar:<br><span class="adres">afscheid-met-eva.netlify.app/admin</span></li>
+    <li>Klik op de oranje knop <span class="knop" style="background:#c2410c">Log in</span>.</li>
+    <li>Log in met <b>info@afscheidmeteva.nl</b> en je eigen wachtwoord.</li>
+  </ol>
+  <div class="scherm" style="width:100mm">
+    <img src="00-inloggen.png" alt="">
+    <span class="mark breed" style="left:28.5%;top:48%;width:22mm;height:9mm;margin:-4.5mm 0 0 -11mm"></span>
+  </div>
+  <div class="let">Zodra je eigen domein gekoppeld is, wordt het adres <b>afscheidmeteva.nl/admin</b>. Tommy laat je dat weten.</div>
+  <div class="voet"><span>Afscheid met Eva · handleiding website</span><span>2</span></div>
+</section>
+
+<!-- 3. Het scherm -->
+<section class="pagina">
+  <div class="eb">Stap 2</div>
+  <h2>Zo ziet het scherm eruit</h2>
+  <p>Na het inloggen zie je twee delen:</p>
+  <ol class="stappen">
+    <li><b>Links: het bewerkpaneel.</b> Hier staan de teksten en foto's die je kunt aanpassen.</li>
+    <li><b>Rechts: je website</b>, precies zoals bezoekers hem zien. Wat je links verandert, zie je hier meteen.</li>
+  </ol>
+  <div class="scherm">
+    <img src="01-overzicht.png" alt="">
+    <span class="nr" style="left:15%;top:50%">1</span>
+    <span class="nr" style="left:66%;top:50%">2</span>
+  </div>
+  <div class="tip"><b>Naar een andere pagina?</b> Klik rechts op je website gewoon op een menu-item, bijvoorbeeld <i>Kosten</i>. Of klik links bovenaan op <b>Pagina's</b> en kies daar een pagina.</div>
+  <div class="tip"><b>Blauwe stippellijntjes</b> rechts laten zien wat je kunt aanpassen. Op de echte website zie je ze niet.</div>
+  <div class="voet"><span>Afscheid met Eva · handleiding website</span><span>3</span></div>
+</section>
+
+<!-- 4. Tekst -->
+<section class="pagina">
+  <div class="eb">Stap 3</div>
+  <h2>Een tekst aanpassen</h2>
+  <ol class="stappen">
+    <li>Klik rechts <b>op de tekst</b> die je wilt veranderen. Hij wordt blauw.</li>
+    <li>Links springt het bijbehorende vakje open.</li>
+    <li>Typ je nieuwe tekst in dat vakje. Rechts zie je meteen hoe het eruitziet.</li>
+    <li>Klaar? Klik op <span class="knop">Save</span> (zie stap 7).</li>
+  </ol>
+  <div class="scherm">
+    <img src="02-tekst.png" alt="">
+    <span class="nr" style="left:48%;top:44%">1</span>
+    <span class="nr" style="left:2.5%;top:49%">2</span>
+  </div>
+  <div class="tip"><b>Nieuwe alinea?</b> Druk twee keer op Enter, zodat er een lege regel tussen staat.</div>
+  <div class="tip"><b>Op een knop klikken</b> (zoals <i>Bel Eva – dag en nacht</i>) werkt in dit scherm niet als knop: je past dan de tekst van de knop aan.</div>
+  <div class="voet"><span>Afscheid met Eva · handleiding website</span><span>4</span></div>
+</section>
+
+<!-- 5. Foto -->
+<section class="pagina">
+  <div class="eb">Stap 4</div>
+  <h2>Een foto wisselen</h2>
+  <ol class="stappen">
+    <li>Klik rechts <b>op de foto</b> die je wilt vervangen.</li>
+    <li>Links zie je de foto. <b>Klik op de foto</b> om een andere te kiezen. Je ziet dan al je foto's; kies er een, of klik op <b>Upload</b> om een nieuwe foto van je computer toe te voegen.</li>
+    <li>Vul bij <b>Omschrijving van de foto</b> kort in wat erop staat, bijvoorbeeld <i>"Eva met een kop thee"</i>. Dat helpt slechtzienden en Google.</li>
+  </ol>
+  <div class="scherm">
+    <img src="03-foto.png" alt="">
+    <span class="nr" style="left:83%;top:50%">1</span>
+    <span class="mark" style="left:7.6%;top:50%;width:24mm;height:34mm;margin:-17mm 0 0 -12mm;border-radius:3mm"></span>
+    <span class="nr" style="left:14.5%;top:37%">2</span>
+    <span class="nr" style="left:2.5%;top:75%">3</span>
+  </div>
+  <div class="tip"><b>Welke foto's werken goed?</b> Een foto van je telefoon is prima. Liever niet groter dan 2000 pixels breed; de website maakt hem zelf kleiner en sneller.</div>
+  <div class="tip"><b>Het prullenbakje</b> naast een foto haalt de foto weg uit dat blok. Hij blijft wel bewaard bij je foto's.</div>
+  <div class="voet"><span>Afscheid met Eva · handleiding website</span><span>5</span></div>
+</section>
+
+<!-- 6. Instellingen -->
+<section class="pagina">
+  <div class="eb">Stap 5</div>
+  <h2>Telefoonnummer, e-mail en menu</h2>
+  <p>Sommige gegevens staan op veel plekken tegelijk: je telefoonnummer, WhatsApp, e-mailadres, adres, KvK-nummer en het menu. Die pas je op <b>één plek</b> aan, en dan verandert het overal op de site.</p>
+  <ol class="stappen">
+    <li>Klik linksboven op de <b>drie streepjes</b> (☰).</li>
+    <li>Kies <b>Instellingen</b> en dan <b>site</b>.</li>
+    <li>Klik op het potloodje bij bijvoorbeeld <b>Contactgegevens</b>, pas aan en klik op <span class="knop">Save</span>.</li>
+  </ol>
+  <div class="scherm">
+    <img src="07-instellingen.png" alt="">
+    <span class="mark" style="left:2.2%;top:3.8%"></span>
+    <span class="mark" style="left:96.2%;top:19.4%"></span>
+  </div>
+  <div class="let"><b>Let op bij het telefoonnummer:</b> er zijn twee vakjes. Eén voor hoe het nummer <i>eruitziet</i> (06 51 58 73 26) en één voor het <i>bellen</i> (+31651587326). Verander je nummer ooit, pas dan beide aan. Twijfel je, vraag het Tommy.</div>
+  <div class="voet"><span>Afscheid met Eva · handleiding website</span><span>6</span></div>
+</section>
+
+<!-- 7. Blokken + opslaan -->
+<section class="pagina">
+  <div class="eb">Stap 6</div>
+  <h2>Blokken</h2>
+  <div class="twee">
+    <div class="scherm" style="margin-top:0"><img src="04-blokken.png" alt=""><span class="mark" style="left:91%;top:28.7%"></span></div>
+    <div>
+      <p>Elke pagina bestaat uit <b>blokken</b>, zoals <i>Foto + tekst</i>, <i>Citaatband</i> of <i>Ervaringen</i>. Je ziet ze links onder elkaar, in dezelfde volgorde als op de pagina.</p>
+      <ul style="padding-left:5mm;margin:0 0 3mm">
+        <li><b>Aanpassen:</b> klik op het potloodje.</li>
+        <li><b>Verplaatsen:</b> pak het blok bij de zes puntjes (⠿) en sleep het omhoog of omlaag.</li>
+        <li><b>Toevoegen:</b> klik op het oranje <b>+</b> naast <i>Blokken</i> en kies een soort blok. Het komt onderaan; vul daarna de teksten in.</li>
+        <li><b>Verwijderen:</b> klik op het rode prullenbakje.</li>
+      </ul>
+      <div class="tip" style="margin-top:0"><b>Google &amp; WhatsApp-voorbeeld</b> (bovenaan) is de titel en korte tekst die mensen zien in Google of als je een link deelt via WhatsApp.</div>
+    </div>
+  </div>
+
+  <div class="eb" style="margin-top:7mm">Stap 7</div>
+  <h2>Opslaan</h2>
+  <div class="scherm" style="width:80mm"><img src="05-opslaan.png" alt=""><span class="mark breed" style="left:81%;top:66%"></span></div>
+  <ol class="stappen">
+    <li>Klik linksonder op <span class="knop">Save</span>.</li>
+    <li>Na <b>1 à 2 minuten</b> staat je wijziging live op je website. Ververs de pagina om het te zien.</li>
+    <li>Toch niet bewaren? Klik dan <b>vóór</b> het opslaan op <b>Reset</b>.</li>
+  </ol>
+  <div class="voet"><span>Afscheid met Eva · handleiding website</span><span>7</span></div>
+</section>
+
+<!-- 8. Hulp -->
+<section class="pagina">
+  <div class="eb">Stap 8</div>
+  <h2>Iets fout gegaan? Geen zorgen</h2>
+  <p>Elke keer dat je opslaat, wordt er automatisch een versie bewaard.</p>
+  <ul style="padding-left:5mm;margin:0 0 4mm">
+    <li><b>Kleine vergissing:</b> typ de oude tekst gewoon opnieuw en sla op.</li>
+    <li><b>Grotere vergissing:</b> stuur Tommy een berichtje met welke pagina en ongeveer hoe laat. Hij kan elke eerdere versie terugzetten, ook van weken geleden.</li>
+  </ul>
+
+  <h2 style="margin-top:9mm">Handige tips</h2>
+  <div class="tip"><b>Eerst kijken, dan opslaan.</b> Rechts zie je precies hoe het wordt. Pas als het goed is, klik je op Save.</div>
+  <div class="tip"><b>Lange ervaringen</b> van families worden op de telefoon automatisch ingekort met een knop <i>"Lees verder"</i>. Daar hoef je niets voor te doen.</div>
+  <div class="tip"><b>Klein kopje boven een titel</b> (zoals <i>OVER MIJ</i>) typ je gewoon normaal. De website maakt er zelf hoofdletters van.</div>
+  <div class="tip"><b>Je wachtwoord</b> is alleen van jou. Deel het met niemand, ook niet met Tommy.</div>
+
+  <div class="let" style="margin-top:9mm;font-size:12pt"><b>Hulp nodig?</b> Bel of app Tommy. Je kunt echt niets kapotmaken: alles wat je opslaat, kan altijd worden teruggezet.</div>
+  <div class="voet"><span>Afscheid met Eva · handleiding website</span><span>8</span></div>
+</section>
+
+</body>
+</html>
