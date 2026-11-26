@@ -526,7 +526,7 @@ export default defineConfig({
               txt('kopWerkgebied', 'Kopje werkgebied'),
               txt('copyright', 'Copyrightregel'),
               txt('privacy', 'Linktekst privacy'),
-              txt('voorwaarden', 'Linktekst voorwaarden', 'Leeg = geen link. Alleen invullen als de pagina /voorwaarden bestaat.'),
+              txt('voorwaarden', 'Linktekst voorwaarden'),
             ],
           },
         ],
