@@ -401,6 +401,9 @@ nav.main{padding-left:var(--pad);padding-right:var(--pad)}
 .phead .deco,footer img.fdeco{display:none}
 }
 
+/* Telefoon: ruimte tussen "Lees alles over…" en het belblok */
+@media (max-width: 860px){.wnu .callbox{margin-top:36px}}
+
 /* Veelgestelde vragen: prettige regellengte */
 .faq details,.faq>.stack{max-width:820px}
 

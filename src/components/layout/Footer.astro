@@ -49,11 +49,10 @@ const adres = adresRegel(s);
   <div>
     <strong>{f?.kopWerkgebied}</strong>
     <span>{c?.werkgebied}</span>
-    <span>{c?.functie}</span>
   </div>
   <div class="legal">
     <span>{f?.copyright}</span>
-    <span>KvK {s?.bedrijf?.kvk} · btw {s?.bedrijf?.btw}</span>
+    <span>KvK {s?.bedrijf?.kvk} · btw {s?.bedrijf?.btw}{c?.functie && <> · {c.functie}</>}</span>
     <span><a href="/privacy">{f?.privacy}</a>{f?.voorwaarden && <> · <a href="/voorwaarden">{f.voorwaarden}</a></>}{cookies && <> · <a href="/privacy" data-consent-open>{s?.cookies?.instellingen}</a></>}</span>
   </div>
 </div>
