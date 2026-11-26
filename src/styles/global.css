@@ -356,7 +356,7 @@ footer img.fdeco{display:block;position:absolute;right:4%;bottom:40px;width:90px
 .gallery.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .gallery.g2 img{height:420px}
 .quoteband .qsub{font-size:18px}
-.fmain .legal{flex-direction:row;flex-wrap:wrap;gap:6px 24px}
+.fmain .legal{flex-direction:row;flex-wrap:wrap;gap:6px 24px;align-items:center}
 .tlhint{display:none}
 
 .split .media img.fam{height:460px}
