@@ -12,6 +12,8 @@ interface Props {
 const { data: d, index = 99 } = Astro.props;
 const kaarten = (d.kaarten ?? []).filter((k): k is NonNullable<typeof k> => !!k);
 const titel = lines(d.titel);
+// Zonder bloktitel zijn de kaarttitels de eerste kopjes onder de paginatitel (h2), anders h3.
+const Kop = titel.length ? 'h3' : 'h2';
 const sizes = kaarten.length > 3 ? '(min-width: 861px) 25vw, 78vw' : '(min-width: 861px) 33vw, 78vw';
 ---
 <section class="wrap sec" data-tina-field={tinaField(d)}>
@@ -34,7 +36,7 @@ const sizes = kaarten.length > 3 ? '(min-width: 861px) 25vw, 78vw' : '(min-width
           <a href={url} class="pcard" data-tina-field={tinaField(k)}>
             {img}
             <span class="b">
-              <h3 data-tina-field={tinaField(k, 'titel')}>{k.titel}</h3>
+              <Kop class="kop" data-tina-field={tinaField(k, 'titel')}>{k.titel}</Kop>
               {k.subtitel && <span class="sub" data-tina-field={tinaField(k, 'subtitel')}>{k.subtitel}</span>}
               {k.tekst && <p data-tina-field={tinaField(k, 'tekst')}>{k.tekst}</p>}
             </span>
@@ -47,7 +49,7 @@ const sizes = kaarten.length > 3 ? '(min-width: 861px) 25vw, 78vw' : '(min-width
           {img}
           <div class="b">
             {metLijst && k.subtitel && <span class="sub" data-tina-field={tinaField(k, 'subtitel')}>{k.subtitel}</span>}
-            <h3 data-tina-field={tinaField(k, 'titel')}>{k.titel}</h3>
+            <Kop class="kop" data-tina-field={tinaField(k, 'titel')}>{k.titel}</Kop>
             {!metLijst && k.subtitel && <span class="sub" data-tina-field={tinaField(k, 'subtitel')}>{k.subtitel}</span>}
             {k.tekst && <p data-tina-field={tinaField(k, 'tekst')}>{k.tekst}</p>}
             {metLijst && <ul class="check">{k.lijst!.map((l, i) => <li data-tina-field={tinaField(k, 'lijst', i)}>{l}</li>)}</ul>}

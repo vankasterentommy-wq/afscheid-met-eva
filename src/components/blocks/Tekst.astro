@@ -15,7 +15,7 @@ const { data: d } = Astro.props;
       {d.titel && <h2 data-tina-field={tinaField(d, 'titel')}>{d.titel}</h2>}
       {paras(d.tekst).map((p) =>
         p.startsWith('## ') ? (
-          <h3 data-tina-field={tinaField(d, 'tekst')}>{p.slice(3).trim()}</h3>
+          d.titel ? <h3 data-tina-field={tinaField(d, 'tekst')}>{p.slice(3).trim()}</h3> : <h2 class="tussenkop" data-tina-field={tinaField(d, 'tekst')}>{p.slice(3).trim()}</h2>
         ) : (
           <p data-tina-field={tinaField(d, 'tekst')}>{lines(p).map((l, i) => <>{i > 0 && <br />}{l}</>)}</p>
         ),

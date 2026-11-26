@@ -15,6 +15,7 @@ const mid = pakketten.length % 2 === 1 ? (pakketten.length - 1) / 2 : -1;
 ---
 <section class={bgClass(d.achtergrond)} data-tina-field={tinaField(d)}>
   <div class="wrap sec stack" style="gap:28px">
+    <div class:list={{ 'tarief-kop': pakketten.length === 1 }} style={pakketten.length === 1 ? undefined : 'display:contents'}>
     <div class="stack" style="gap:8px;max-width:760px">
       {d.eyebrow && <span class="eb" data-tina-field={tinaField(d, 'eyebrow')}>{d.eyebrow}</span>}
       {d.titel && <h2 data-tina-field={tinaField(d, 'titel')}>{d.titel}</h2>}
@@ -31,6 +32,7 @@ const mid = pakketten.length % 2 === 1 ? (pakketten.length - 1) / 2 : -1;
         ))}
       </div>
     )}
+    </div>
     {d.noot && <p class="muted" style="max-width:760px" data-tina-field={tinaField(d, 'noot')}>{d.noot}</p>}
     {d.kaarten?.length ? (
       <div class="kgrid">{d.kaarten.map((k) => k && <TekstKaart data={k as unknown as PaginaBlokkenChecklistKaarten} />)}</div>
