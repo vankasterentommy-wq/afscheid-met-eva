@@ -1,6 +1,7 @@
 ---
 import { tinaField } from '@tinacms/astro/tina-field';
 import Icon from '../ui/Icon.astro';
+import Img from '../ui/Img.astro';
 import { isActive, safeUrl, telHref, waHref } from '../../lib/util';
 import type { Settings } from '../../lib/data';
 
@@ -12,7 +13,7 @@ const { settings: s, path } = Astro.props;
 const k = s?.knoppen;
 ---
 <div class="wrap">
-  <a href="/" class="logo" aria-label="Afscheid met Eva – naar home"><img src="/img/logo2-bordeaux.png" alt="Afscheid met Eva" width="640" height="233" /></a>
+  <a href="/" class="logo" aria-label="Afscheid met Eva – naar home"><Img src="/img/logo2-bordeaux.png" alt="Afscheid met Eva" eager widths={[260, 380, 500]} sizes="(min-width: 861px) 165px, 126px" /></a>
   <div class="barr">
     <a href={telHref(s)} class="iconbtn call" aria-label={`Bel Eva: ${s?.contact?.telefoon ?? ''}`}><Icon name="phone" /></a>
     <button class="iconbtn burger" aria-label="Menu openen" aria-expanded="false" aria-controls="menu"><Icon name="menu" /></button>
